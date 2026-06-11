@@ -1,14 +1,40 @@
 ---
 title: overwire init
-description: "Scaffold a flat .overwire/ config tree (variables, secrets, modes, mocks, payloads)."
+description: "Scaffold a flat .overwire/ config tree."
 sidebar:
   order: 2
 ---
 
-Scaffold a flat .overwire/ config tree (variables, secrets, modes, mocks, payloads).
+Scaffolds the `.overwire/` config root: `settings.yml`, `variables.yml`, `secrets.yml`, the `modes/`, `mocks/`, and `payloads/` directories, and a `.gitignore` that keeps secret values and local run state out of git.
 
 ```sh
 overwire init [options]
 ```
 
-The full option reference for this page is being written. Run `overwire init --help` for the complete, current option list.
+## Options
+
+| Option | Description |
+| --- | --- |
+| `--owner <owner>` | Organization or user owning this repo. Inferred from the git remote if omitted; falls back to `local` when no remote owner is available. |
+| `--config-root <dir>` | Root for the config tree, relative to cwd (default `.overwire`). |
+| `--force` | Overwrite existing config files. Without it, re-running `init` is create-only and leaves your edits alone. |
+| `--workspace` | Create a workspace-level `.overwire/` with auto-discovered child repos. |
+
+## Workspace mode
+
+`init --workspace` writes `instances.yml` at the workspace config root, listing every child directory that contains a `.github/` or `.overwire/` tree. Entries store relative paths, so the workspace stays portable across machines.
+
+## Examples
+
+```sh
+# Single repo, owner from git remote
+overwire init
+
+# Explicit owner
+overwire init --owner my-org
+
+# Multi-repo workspace at the parent directory
+overwire init --workspace
+```
+
+See [Initialize a project](/getting-started/initialize/) for the walkthrough.

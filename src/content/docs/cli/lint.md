@@ -5,10 +5,29 @@ sidebar:
   order: 6
 ---
 
-Lint a workflow file for common issues.
+Lints a workflow file for common issues: deprecated workflow commands, unpinned action references, duplicate step IDs, and unknown runner labels.
 
 ```sh
 overwire lint [options] <file>
 ```
 
-The full option reference for this page is being written. Run `overwire lint --help` for the complete, current option list.
+## Arguments
+
+| Argument | Description |
+| --- | --- |
+| `file` | Path to a `.github/workflows/*.yml` file. |
+
+## Options
+
+| Option | Description |
+| --- | --- |
+| `--json` | Emit diagnostics as JSON, for editor and CI integration. |
+
+## Examples
+
+```sh
+overwire lint .github/workflows/ci.yml
+overwire lint .github/workflows/ci.yml --json
+```
+
+The desktop app surfaces the same diagnostics inline in the workflow editor.

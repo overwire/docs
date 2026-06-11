@@ -1,14 +1,27 @@
 ---
 title: overwire list
-description: "List workflows in a directory (default: .github/workflows in cwd) with their triggers and jobs."
+description: "List workflows with their triggers and jobs."
 sidebar:
   order: 5
 ---
 
-List workflows in a directory (default: .github/workflows in cwd) with their triggers and jobs.
+Lists every workflow in a directory with its triggers and jobs.
 
 ```sh
 overwire list [options]
 ```
 
-The full option reference for this page is being written. Run `overwire list --help` for the complete, current option list.
+## Options
+
+| Option | Description |
+| --- | --- |
+| `-d, --dir <path>` | Directory to scan (default `.github/workflows`). |
+| `--config-root <dir>` | Flat `.overwire/` directory to derive the workspace from. |
+| `--json` | Emit raw JSON instead of a human summary. |
+
+## Examples
+
+```sh
+overwire list
+overwire list --config-root ../service-repo/.overwire
+```

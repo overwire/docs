@@ -74,7 +74,22 @@ export default defineConfig({
         },
         {
           label: "Configuration reference",
-          items: ["configuration"],
+          collapsed: true,
+          items: [
+            "configuration",
+            "configuration/settings",
+            "configuration/variables",
+            "configuration/secrets",
+            "configuration/modes",
+            "configuration/mocks",
+            "configuration/payloads",
+            "configuration/governance",
+            "configuration/scenarios",
+            "configuration/api-mocks",
+            "configuration/environments",
+            "configuration/instances",
+            "configuration/state-and-cache",
+          ],
         },
         {
           label: "App guide",

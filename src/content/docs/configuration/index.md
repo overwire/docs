@@ -1,26 +1,29 @@
 ---
-title: Configuration reference
-description: Every file in the .overwire/ config root and what it does.
+title: Configuration overview
+description: "Every file in the .overwire/ config root and what it does."
+sidebar:
+  order: 1
+  label: Overview
 ---
 
-The config root is a flat `.overwire/` directory. Every file is plain YAML or JSON, diffable and scriptable. Per-file reference pages are being written; this index covers the full layout.
+The config root is a flat `.overwire/` directory. Every file is plain YAML or JSON, diffable and scriptable. The desktop app edits these files directly; nothing lives in hidden app state.
 
 | Path | Purpose |
 | --- | --- |
-| `settings.yml` | Repository owner and Overwire settings. |
-| `variables.yml` | Repository variables resolved by `${{ vars.* }}`. |
-| `secrets.yml` | Secret declarations. Entries can be declared without values, carry a literal local-only value, or use the full form with description and required flag. |
-| `rulesets.json` | Branch rulesets in GitHub's native export format. |
-| `github/rulesets/*.json` | Additional exported rulesets. |
-| `modes/<workflow>.yml` | Workflow default mode and per-step overrides. |
-| `mocks/**/*.yml` | Mock contracts for `uses:` steps. |
-| `payloads/<event>.json` | Saved event payload overrides. |
-| `dispatch/<workflow>.yml` | Saved `workflow_dispatch` input defaults. |
-| `pull-requests.yml` | Local pull request scenarios. |
-| `statuses.yml` | External commit statuses and check runs. |
-| `api-mocks.yml` | Declarative GitHub API mock routes. |
-| `environments/` | Environment variables, secrets, and protection rules. |
-| `instances.yml` | Workspace peer list (workspace roots only). |
-| `state/` | Run and session derived state. Local-only. |
-| `cache/` | Local workflow cache. Local-only. |
+| [`settings.yml`](/configuration/settings/) | Repository owner and Overwire settings. |
+| [`variables.yml`](/configuration/variables/) | Repository variables resolved by `${{ vars.* }}`. |
+| [`secrets.yml`](/configuration/secrets/) | Secret declarations, optionally with local-only values. |
+| [`rulesets.json`](/configuration/governance/) | Branch rulesets in GitHub's native export format. |
+| [`github/rulesets/*.json`](/configuration/governance/) | Additional exported rulesets. |
+| [`modes/<workflow>.yml`](/configuration/modes/) | Workflow default mode and per-step overrides. |
+| [`mocks/**/*.yml`](/configuration/mocks/) | Mock contracts for `uses:` steps. |
+| [`payloads/<event>.json`](/configuration/payloads/) | Saved event payload overrides. |
+| [`dispatch/<workflow>.yml`](/configuration/payloads/) | Saved `workflow_dispatch` input defaults. |
+| [`pull-requests.yml`](/configuration/scenarios/) | Local pull request scenarios. |
+| [`statuses.yml`](/configuration/scenarios/) | External commit statuses and check runs. |
+| [`api-mocks.yml`](/configuration/api-mocks/) | Declarative GitHub API mock routes. |
+| [`environments/`](/configuration/environments/) | Per-environment variables, secrets, and protection rules. |
+| [`instances.yml`](/configuration/instances/) | Workspace peer list (workspace roots only). |
+| [`state/`](/configuration/state-and-cache/) | Run-derived state. Local-only. |
+| [`cache/`](/configuration/state-and-cache/) | Local workflow cache. Local-only. |
 | `.gitignore` | Scaffolded by `overwire init`: ignores `secrets.yml`, `state/`, and `cache/`. |

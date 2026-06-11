@@ -1,14 +1,47 @@
 ---
 title: overwire history
-description: "List recent workflow runs for the current project."
+description: "List recent workflow runs from the run store."
 sidebar:
   order: 14
 ---
 
-List recent workflow runs for the current project.
+Lists recent workflow runs for the current project from the run store, with subcommands for run details and retention.
 
 ```sh
-overwire history [options]
+overwire history [options] [command]
 ```
 
-The full option reference for this page is being written. Run `overwire history --help` for the complete, current option list.
+## Options
+
+| Option | Description |
+| --- | --- |
+| `--config-root <dir>` | Project config root (default `.overwire`). |
+| `--json` | Output as JSON. |
+| `--limit <n>` | Max number of runs to show (default 20). |
+
+## Subcommands
+
+### `history show <run-id>`
+
+Shows details for a single run: jobs, steps, outcomes, and durations.
+
+```sh
+overwire history show 01JXAMPLE
+```
+
+### `history prune`
+
+Applies the retention policy to the run store across all repositories.
+
+```sh
+overwire history prune
+```
+
+## Examples
+
+```sh
+overwire history --limit 10
+overwire history show 01JXAMPLE
+```
+
+Run ids from `history` feed [`overwire run --rerun-failed`](/cli/run/) and [`overwire seed-mocks --from-run`](/cli/seed-mocks/). See [Runs and the run store](/concepts/runs/).

@@ -1,14 +1,40 @@
 ---
 title: overwire doctor
-description: "Run a quick health check on Overwire's environment (Node, container engine, .overwire config)."
+description: "Health-check Node, the container engine, and the .overwire config tree."
 sidebar:
   order: 3
 ---
 
-Run a quick health check on Overwire's environment (Node, container engine, .overwire config).
+Runs a quick health check on Overwire's environment: Node version, container engine reachability, and the `.overwire/` config tree. The output tells you exactly what live runs are missing.
 
 ```sh
-overwire doctor [options]
+overwire doctor [options] [command]
 ```
 
-The full option reference for this page is being written. Run `overwire doctor --help` for the complete, current option list.
+## Options
+
+| Option | Description |
+| --- | --- |
+| `--config-root <dir>` | Config tree to inspect (default `.overwire`). |
+| `--bundle [file]` | Write a redacted diagnostic bundle (JSON) for support requests. |
+
+## Subcommands
+
+### `doctor capabilities`
+
+Reports which workflow features are available in the current environment, broken down by capability. Useful for understanding why a feature is degraded before starting a run.
+
+```sh
+overwire doctor capabilities
+```
+
+## Diagnostic bundles
+
+`--bundle` writes a support bundle that is redacted by design: a names-and-sizes inventory of the config tree, environment facts, and failed-step run summaries. Secret values and file contents are never included, and home directory paths are scrubbed. See [Troubleshooting](/troubleshooting/).
+
+## Examples
+
+```sh
+overwire doctor
+overwire doctor --bundle support-bundle.json
+```
