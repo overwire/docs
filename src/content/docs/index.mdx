@@ -1,0 +1,37 @@
+---
+title: Overwire
+description: Run, mock, and debug your GitHub Actions workflow files locally with Overwire, a local workflow workbench.
+template: splash
+hero:
+  tagline: Run, mock, and debug your GitHub Actions workflow files locally. Stop pushing to find out.
+  actions:
+    - text: Get started
+      link: /getting-started/installation/
+      icon: right-arrow
+    - text: overwire.io
+      link: https://overwire.io
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+<CardGrid stagger>
+  <Card title="Every step gets a mode" icon="setting">
+    Flag any step as skip, mock, or live. Mock contracts declare expected
+    inputs and outputs so third-party actions run without external
+    dependencies.
+  </Card>
+  <Card title="Real runner container" icon="rocket">
+    Live steps execute inside a runner container that Overwire builds and
+    manages. Nothing from your workflow runs directly on the host.
+  </Card>
+  <Card title="Simulate the platform" icon="puzzle">
+    Rulesets, required checks, PR scenarios, commit statuses, environment
+    approvals, and a local GitHub API mock server with capture and suggest.
+  </Card>
+  <Card title="Scriptable CLI" icon="seti:shell">
+    Everything the workbench does is scriptable. Parse, lint, simulate, run,
+    and chain workflows from the command line.
+  </Card>
+</CardGrid>

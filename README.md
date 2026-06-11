@@ -8,6 +8,20 @@ This repository is the source for [docs.overwire.io](https://docs.overwire.io). 
 
 Found an error or something unclear? Open an issue. Documentation fixes via pull request are welcome.
 
+## Development
+
+The site is built with [Astro Starlight](https://starlight.astro.build). Content lives as plain Markdown under `src/content/docs/`.
+
+```sh
+npm install
+npm run dev      # local dev server
+npm run build    # static build to dist/
+```
+
+## Notices
+
+This site bundles the Geist and Geist Mono typefaces, licensed under the SIL Open Font License 1.1. The license text ships at [`public/licenses/geist-ofl.txt`](public/licenses/geist-ofl.txt).
+
 ## License
 
 Copyright © 2026 Overwire. All rights reserved.

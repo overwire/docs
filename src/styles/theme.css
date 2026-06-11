@@ -1,0 +1,60 @@
+/* Overwire brand theme for Starlight.
+   Dark palette mirrors the product's dark surface stack; light mode uses the
+   product's warm paper tones. Blue is the only interactive accent. */
+
+:root {
+  --sl-font: "Geist Sans", system-ui, sans-serif;
+  --sl-font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Dark mode (default Starlight vars target dark). */
+  --sl-color-accent-low: #15243f;
+  --sl-color-accent: #3b82f6;
+  --sl-color-accent-high: #93bbfd;
+  --sl-color-white: #e8ebf1;
+  --sl-color-gray-1: #d3d7e0;
+  --sl-color-gray-2: #a5acbb;
+  --sl-color-gray-3: #7d8399;
+  --sl-color-gray-4: #3d4250;
+  --sl-color-gray-5: #2a2e38;
+  --sl-color-gray-6: #161920;
+  --sl-color-black: #0e1014;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #dbe7fb;
+  --sl-color-accent: #2563eb;
+  --sl-color-accent-high: #1d4ed8;
+  --sl-color-white: #1b1c20;
+  --sl-color-gray-1: #303440;
+  --sl-color-gray-2: #4a4d56;
+  --sl-color-gray-3: #7a7d86;
+  --sl-color-gray-4: #b3b0a3;
+  --sl-color-gray-5: #d8d3bf;
+  --sl-color-gray-6: #f2f1ea;
+  --sl-color-gray-7: #f7f6f0;
+  --sl-color-black: #faf9f4;
+}
+
+/* Headings carry tight negative tracking, matching the brand type system. */
+.sl-markdown-content :is(h1, h2, h3),
+.content-panel h1 {
+  letter-spacing: -0.02em;
+}
+
+/* Landing cards: blue is the only accent; suppress Starlight's
+   multicolor card icon chips. */
+.card .icon {
+  color: var(--sl-color-accent) !important;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+/* Footer disclaimer */
+.ow-disclaimer {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--sl-color-gray-5);
+  font-size: var(--sl-text-xs);
+  line-height: 1.6;
+  color: var(--sl-color-gray-3);
+}
