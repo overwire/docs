@@ -21,7 +21,7 @@ overwire doctor
 overwire run .github/workflows/ci.yml --docker
 ```
 
-Live steps execute in the `overwire/runner` image, one container per job. JavaScript, composite, and Docker actions are fetched at run time by your machine and staged into the container.
+Live steps execute in the `overwireio/runner` image, one container per job. JavaScript, composite, and Docker actions are fetched at run time by your machine and staged into the container.
 
 You can mix modes freely: set the deploy steps to `mock`, keep build and test `live`, and skip what you do not need. See [step modes](/concepts/modes/) for how mode selection works.
 

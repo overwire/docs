@@ -30,7 +30,7 @@ overwire run [options] [file]
 | `--inputs <json>` | `workflow_dispatch`/`workflow_call` inputs as a JSON object. |
 | `--config-root <dir>` | Flat `.overwire/` directory containing `variables.yml`, `modes/`, `secrets.yml`, `mocks/`, etc. |
 | `--docker` | Execute live steps in a container, one per job. |
-| `--runner-image <image>` | OCI image for live execution (default `overwire/runner:ubuntu-24.04`). |
+| `--runner-image <image>` | OCI image for live execution (default `overwireio/runner:ubuntu-24.04`). |
 | `--action-cache-dir <dir>` | Directory for cached action sources (default `~/.cache/overwire/actions`). |
 | `--workflow-cache-dir <dir>` | Directory for local `actions/cache` entries (defaults to `<config-root>/cache` when `--config-root` is set). |
 | `--tool-cache-dir <dir>` | Host directory persisted as `RUNNER_TOOL_CACHE` across runs (default `~/.cache/overwire/tool-cache`). |

@@ -24,7 +24,7 @@ overwire chain [options] [file-or-command] [session-id]
 | --- | --- |
 | `--config-root <dir>` | Root for the config tree, relative to cwd (default `.overwire`). |
 | `--docker` | Execute live steps in a container, one per job. |
-| `--runner-image <image>` | OCI image for live execution (default `overwire/runner:ubuntu-24.04`). |
+| `--runner-image <image>` | OCI image for live execution (default `overwireio/runner:ubuntu-24.04`). |
 | `--action-cache-dir <dir>` | Directory for cached action sources (default `~/.cache/overwire/actions`). |
 | `--workflow-cache-dir <dir>` | Directory for local `actions/cache` entries (defaults to `<config-root>/cache`). |
 | `--tool-cache-dir <dir>` | Host directory persisted as `RUNNER_TOOL_CACHE` across runs (default `~/.cache/overwire/tool-cache`). |

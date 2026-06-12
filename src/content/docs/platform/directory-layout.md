@@ -33,4 +33,4 @@ Everything under `~/.cache/overwire/` is rebuildable: deleting it loses run hist
 
 ## Containers
 
-Live runs require a Docker-API-compatible container engine (e.g., Docker Desktop, Colima, OrbStack, Rancher Desktop). Overwire connects to the engine's socket and manages its own runner containers and the `overwire/runner` image. It never bundles or installs a container engine.
+Live runs require a Docker-API-compatible container engine (e.g., Docker Desktop, Colima, OrbStack, Rancher Desktop). Overwire connects to the engine's socket and manages its own runner containers and the `overwireio/runner` image. It never bundles or installs a container engine.
