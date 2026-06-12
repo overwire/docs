@@ -37,3 +37,5 @@ auto_approve: false
 | `auto_approve` | Approve automatically, useful for unattended CLI runs of protected workflows. |
 
 In the desktop app, a run that hits a protection rule pauses and shows an approval dialog with the rules; approving resumes the run, rejecting fails the job, the same observable behavior as an environment gate upstream.
+
+The app's [Repository → Environments section](/app/repository/) edits all three files per environment — protection rules, variables, and secrets — and can create or delete environment directories.

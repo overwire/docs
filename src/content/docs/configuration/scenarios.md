@@ -52,7 +52,7 @@ pullRequests:
 
 ## `statuses.yml`
 
-External commit statuses and check runs that exist independently of your local runs, the way a third-party CI or scanner would report them upstream. Two lists: `statuses:` (classic commit statuses) and `checks:` (check runs). Every entry targets a commit through exactly one of `ref`, `sha`, or `pr`.
+External commit statuses and check runs that exist independently of your local runs, the way a third-party CI or scanner would report them upstream. Two lists: `statuses:` (classic commit statuses) and `checks:` (check runs). Every entry targets a commit through at least one of `ref`, `sha`, or `pr`. The desktop app's [Repository → Statuses section](/app/repository/) edits both lists as tables.
 
 ### Commit status fields
 

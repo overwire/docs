@@ -30,7 +30,9 @@ Opening a `modes/<workflow>.yml` file directly shows each job and step with inli
 - **Variables** edits [`variables.yml`](/configuration/variables/) as a key-value table, exposed to workflows as `${{ vars.KEY }}`.
 - **Secrets** edits declarations in [`secrets.yml`](/configuration/secrets/). The editor shows names and whether a value is present; values themselves never reach the UI. If literal values would be committed to git, the editor warns and offers to add the ignore rule.
 - **Rulesets** edits [`rulesets.json`](/configuration/governance/) in the platform's native export format.
+- **Custom properties** edits [`custom-properties.yml`](/configuration/custom-properties/) as a key-value table.
+- **Statuses** edits [`statuses.yml`](/configuration/scenarios/) as commit-status and check-run tables.
 
 ![The variables editor with the repository's key-value table](../../../assets/app/editors--variables.png)
 
-Every structured editor has a raw-YAML toggle in its header for editing the underlying file directly.
+Every structured editor has a raw-YAML toggle in its header for editing the underlying file directly. The same editors power the [Repository page](/app/repository/), which collects them per repository alongside organization, environment, and status sections.

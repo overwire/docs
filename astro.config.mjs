@@ -122,6 +122,7 @@ export default defineConfig({
             "app/runs-panel",
             "app/editors",
             "app/pull-requests",
+            "app/repository",
             "app/runner",
             "app/settings",
           ],

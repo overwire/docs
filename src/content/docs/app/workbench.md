@@ -43,7 +43,7 @@ Until your first runs complete, a dismissible **Get started** card sits in the d
 
 | Shortcut | Action |
 | --- | --- |
-| `⌘1` to `⌘4` | Switch between Workbench, Explorer, History, and Pull Requests |
+| `⌘1` to `⌘5` | Switch between Explorer, Workbench, History, Pull Requests, and Repository |
 | `⌘J` | Toggle the runs panel |
 | `⌘.` | Cancel the active run |
 | `⌘,` | Open settings |
