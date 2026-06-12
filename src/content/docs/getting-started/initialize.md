@@ -52,7 +52,13 @@ This writes `instances.yml` at the workspace `.overwire/`, auto-discovering chil
 
 ## In the desktop app
 
-Opening a directory without a `.overwire/` tree shows a splash screen with an initialize action that does the same scaffolding, including child-repo auto-discovery.
+The app starts on an open-project screen until you point it at a directory:
+
+![The open-project screen on first launch](../../../assets/app/setup--open-project.png)
+
+Opening a directory without a `.overwire/` tree shows a splash screen with an initialize action that does the same scaffolding, including child-repo auto-discovery:
+
+![The initialize splash for a directory that has no .overwire tree yet](../../../assets/app/setup--initialize.png)
 
 ## Next step
 

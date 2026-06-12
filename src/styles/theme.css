@@ -49,6 +49,13 @@
   border: 0 !important;
 }
 
+/* App screenshots: frame the viewport captures so they read as app
+   windows on both themes. */
+.sl-markdown-content img {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 8px;
+}
+
 /* Footer disclaimer */
 .ow-disclaimer {
   margin-top: 1rem;
