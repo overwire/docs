@@ -58,3 +58,11 @@
   line-height: 1.6;
   color: var(--sl-color-gray-3);
 }
+
+.ow-disclaimer-home {
+  margin-bottom: 0.5rem;
+}
+
+.ow-disclaimer-home a {
+  color: var(--sl-color-gray-2);
+}
