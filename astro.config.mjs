@@ -15,9 +15,6 @@ export default defineConfig({
           href: "https://github.com/overwire/docs",
         },
       ],
-      editLink: {
-        baseUrl: "https://github.com/overwire/docs/edit/main/",
-      },
       favicon: "/favicon.ico",
       head: [
         {
