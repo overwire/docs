@@ -48,7 +48,8 @@ overwire run pipeline-app/.github/workflows/deploy.yml \
 **Evaluate pull request scenarios.** compliance-app pre-stages three pull requests: one passes every check, one is missing a required review, one has a failed security check. Open the Pull Requests page in the app to see the predicted merge outcome for each, or run the chain that drives CI and the compliance gate in sequence:
 
 ```sh
-overwire chain run pr-lifecycle --config-root compliance-app/.overwire
+overwire chain compliance-app/.overwire/chains/pr-lifecycle.yml \
+  --config-root compliance-app/.overwire
 ```
 
 **Lint a deliberately bad workflow.** One workflow exists solely to trip the linter, with deprecated commands, duplicate step IDs, and an unpinned action:
