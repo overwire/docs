@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.overwire.io/schemas/dispatch-defaults.schema.json",
+  "title": "Dispatch input defaults",
+  "description": "Saved workflow_dispatch input defaults for one workflow.",
+  "type": "object",
+  "properties": {
+    "event": {
+      "type": "string",
+      "description": "Event the saved defaults belong to (normally workflow_dispatch)."
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Input name to value. Values are strings, matching dispatch form semantics."
+    }
+  },
+  "required": [
+    "event",
+    "inputs"
+  ],
+  "additionalProperties": false
+}

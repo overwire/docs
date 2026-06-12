@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.overwire.io/schemas/instances.schema.json",
+  "title": "Workspace instances",
+  "description": "Workspace peer list: every repository this workspace contains.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "fullName": {
+        "type": "string",
+        "minLength": 3,
+        "description": "Instance identity as owner/repo, e.g. acme-corp/widget."
+      },
+      "relativePath": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Path from the workspace root to the repository, e.g. \"widget\" or \".\"."
+      }
+    },
+    "required": [
+      "fullName",
+      "relativePath"
+    ],
+    "additionalProperties": false
+  }
+}

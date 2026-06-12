@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.overwire.io/schemas/chain.schema.json",
+  "title": "Workflow chain scenario",
+  "description": "Ordered multi-workflow session run by `overwire chain <file>`. (.overwire/chains/<name>.yml)",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "workflow": {
+            "type": "string",
+            "minLength": 1
+          },
+          "event": {
+            "type": "string",
+            "enum": [
+              "push",
+              "pull_request",
+              "pull_request_target",
+              "workflow_dispatch",
+              "workflow_call",
+              "repository_dispatch",
+              "workflow_run",
+              "schedule",
+              "release",
+              "create",
+              "delete",
+              "issues",
+              "issue_comment",
+              "merge_group",
+              "pull_request_review"
+            ],
+            "default": "push"
+          },
+          "payload": {
+            "type": "string",
+            "minLength": 1
+          },
+          "defaultMode": {
+            "type": "string",
+            "enum": [
+              "skip",
+              "mock",
+              "live"
+            ]
+          },
+          "continueOnError": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "workflow"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "runs"
+  ],
+  "additionalProperties": false
+}

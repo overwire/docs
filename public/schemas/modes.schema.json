@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.overwire.io/schemas/modes.schema.json",
+  "title": "Step mode overrides",
+  "description": "Workflow default and per-job/per-step skip/mock/live mode selections. (.overwire/modes/<workflow>.yml)",
+  "type": "object",
+  "properties": {
+    "defaultMode": {
+      "type": "string",
+      "enum": [
+        "skip",
+        "live",
+        "mock"
+      ]
+    },
+    "jobs": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string",
+            "enum": [
+              "skip",
+              "live",
+              "mock"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "steps": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string",
+                  "enum": [
+                    "skip",
+                    "live",
+                    "mock"
+                  ]
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "steps": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "enum": [
+          "skip",
+          "live",
+          "mock"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

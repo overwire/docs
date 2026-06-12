@@ -1,0 +1,224 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.overwire.io/schemas/pull-requests.schema.json",
+  "title": "Pull request scenarios",
+  "description": "Local PR scenarios that drive pull_request events and merge prediction. (.overwire/pull-requests.yml)",
+  "type": "object",
+  "properties": {
+    "pullRequests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "exclusiveMinimum": 0
+          },
+          "number": {
+            "type": "integer",
+            "exclusiveMinimum": 0
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "open",
+              "closed"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "draft": {
+            "type": "boolean"
+          },
+          "merged": {
+            "type": "boolean"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "opened",
+              "closed",
+              "reopened",
+              "synchronize",
+              "edited",
+              "ready_for_review",
+              "converted_to_draft",
+              "labeled",
+              "unlabeled",
+              "assigned",
+              "unassigned",
+              "review_requested",
+              "review_request_removed"
+            ]
+          },
+          "base": {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha": {
+                "type": "string",
+                "minLength": 1
+              },
+              "repository": {
+                "type": "string",
+                "minLength": 1
+              },
+              "lastPusher": {
+                "type": "string",
+                "minLength": 1
+              },
+              "lastPushedAt": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "ref"
+            ],
+            "additionalProperties": false
+          },
+          "head": {
+            "type": "object",
+            "properties": {
+              "ref": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha": {
+                "type": "string",
+                "minLength": 1
+              },
+              "repository": {
+                "type": "string",
+                "minLength": 1
+              },
+              "lastPusher": {
+                "type": "string",
+                "minLength": 1
+              },
+              "lastPushedAt": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "ref"
+            ],
+            "additionalProperties": false
+          },
+          "changedFiles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "reviews": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0
+                },
+                "user": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "state": {
+                  "type": "string",
+                  "enum": [
+                    "APPROVED",
+                    "CHANGES_REQUESTED",
+                    "COMMENTED",
+                    "DISMISSED",
+                    "PENDING",
+                    "approved",
+                    "changes_requested",
+                    "commented",
+                    "dismissed",
+                    "pending"
+                  ]
+                },
+                "body": {
+                  "type": "string"
+                },
+                "submittedAt": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "commitSha": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "codeOwner": {
+                  "type": "boolean"
+                },
+                "stale": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "user",
+                "state"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "conversations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "exclusiveMinimum": 0
+                    },
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  ]
+                },
+                "resolved": {
+                  "type": "boolean"
+                },
+                "outdated": {
+                  "type": "boolean"
+                },
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "line": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0
+                }
+              },
+              "required": [
+                "id",
+                "resolved"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "number",
+          "base",
+          "head"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

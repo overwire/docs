@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.overwire.io/schemas/settings.schema.json",
+  "title": "Overwire settings",
+  "description": "Repository owner identity and Overwire behavior settings. (.overwire/settings.yml)",
+  "type": "object",
+  "properties": {
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "logs": {
+      "type": "object",
+      "properties": {
+        "plaintextSecrets": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "remote": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

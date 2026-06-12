@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.overwire.io/schemas/payload-override.schema.json",
+  "title": "Event payload override",
+  "description": "Partial GitHub event payload. Fields here override the synthesized payload for the event; anything omitted keeps its generated value.",
+  "type": "object",
+  "additionalProperties": {}
+}

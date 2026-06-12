@@ -1,0 +1,86 @@
+[
+  {
+    "id": "settings",
+    "title": "Overwire settings",
+    "file": ".overwire/settings.yml",
+    "url": "https://docs.overwire.io/schemas/settings.schema.json"
+  },
+  {
+    "id": "variables",
+    "title": "Repository variables",
+    "file": ".overwire/variables.yml",
+    "url": "https://docs.overwire.io/schemas/variables.schema.json"
+  },
+  {
+    "id": "secrets",
+    "title": "Secret declarations",
+    "file": ".overwire/secrets.yml",
+    "url": "https://docs.overwire.io/schemas/secrets.schema.json"
+  },
+  {
+    "id": "modes",
+    "title": "Step mode overrides",
+    "file": ".overwire/modes/<workflow>.yml",
+    "url": "https://docs.overwire.io/schemas/modes.schema.json"
+  },
+  {
+    "id": "mock-contract",
+    "title": "Mock contract",
+    "file": ".overwire/mocks/<action>.yml",
+    "url": "https://docs.overwire.io/schemas/mock-contract.schema.json"
+  },
+  {
+    "id": "payload-override",
+    "title": "Event payload override",
+    "file": ".overwire/payloads/<event>.json",
+    "url": "https://docs.overwire.io/schemas/payload-override.schema.json"
+  },
+  {
+    "id": "dispatch-defaults",
+    "title": "Dispatch input defaults",
+    "file": ".overwire/dispatch/<workflow>.yml",
+    "url": "https://docs.overwire.io/schemas/dispatch-defaults.schema.json"
+  },
+  {
+    "id": "chain",
+    "title": "Workflow chain scenario",
+    "file": ".overwire/chains/<name>.yml",
+    "url": "https://docs.overwire.io/schemas/chain.schema.json"
+  },
+  {
+    "id": "pull-requests",
+    "title": "Pull request scenarios",
+    "file": ".overwire/pull-requests.yml",
+    "url": "https://docs.overwire.io/schemas/pull-requests.schema.json"
+  },
+  {
+    "id": "statuses",
+    "title": "External statuses and check runs",
+    "file": ".overwire/statuses.yml",
+    "url": "https://docs.overwire.io/schemas/statuses.schema.json"
+  },
+  {
+    "id": "api-mocks",
+    "title": "API mock routes",
+    "file": ".overwire/api-mocks.yml",
+    "url": "https://docs.overwire.io/schemas/api-mocks.schema.json"
+  },
+  {
+    "id": "environment-protection",
+    "title": "Environment protection",
+    "file": ".overwire/environments/<name>/protection.yml",
+    "url": "https://docs.overwire.io/schemas/environment-protection.schema.json"
+  },
+  {
+    "id": "custom-properties",
+    "title": "Repository custom properties",
+    "file": ".overwire/custom-properties.yml",
+    "url": "https://docs.overwire.io/schemas/custom-properties.schema.json"
+  },
+  {
+    "id": "instances",
+    "title": "Workspace instances",
+    "file": ".overwire/instances.yml",
+    "url": "https://docs.overwire.io/schemas/instances.schema.json"
+  }
+]

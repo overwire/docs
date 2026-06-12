@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.overwire.io/schemas/mock-contract.schema.json",
+  "title": "Mock contract",
+  "description": "Expected inputs and synthesized outputs for a mocked uses: step. (.overwire/mocks/<action>.yml)",
+  "type": "object",
+  "properties": {
+    "uses": {
+      "type": "string"
+    },
+    "stepId": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "default": {
+                "type": [
+                  "string",
+                  "number",
+                  "boolean"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "number",
+          "boolean"
+        ]
+      }
+    },
+    "durationMs": {
+      "type": "number"
+    }
+  },
+  "additionalProperties": false
+}

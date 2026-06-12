@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://docs.overwire.io/schemas/variables.schema.json",
+  "title": "Repository variables",
+  "description": "Values exposed to workflows as ${{ vars.NAME }}. (.overwire/variables.yml)",
+  "type": "object",
+  "additionalProperties": {
+    "type": [
+      "string",
+      "number",
+      "boolean"
+    ]
+  }
+}
