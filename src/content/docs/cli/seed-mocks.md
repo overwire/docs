@@ -27,6 +27,7 @@ overwire seed-mocks [options] <file>
 | `--include-local` | Also seed contracts for `./local` actions. |
 | `--from-run <run-id>` | Generate contracts from a completed run instead of fetching actions, capturing the outputs the run actually produced. |
 | `--config-root <dir>` | Project config root (for `--from-run`). |
+| `--json` | Output the seed report (outcomes and counts) as JSON. |
 
 ## Examples
 

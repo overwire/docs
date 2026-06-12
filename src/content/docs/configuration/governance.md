@@ -17,4 +17,19 @@ Rulesets feed two surfaces:
 
 Because the format is the native export, the file round-trips: nothing Overwire-specific is added, and re-exporting from upstream after a rules change is a copy-paste update.
 
+## Organization-level rulesets
+
+A [workspace](/concepts/workspaces/) can simulate the rules an organization admin would enforce across repositories. Org rulesets live at the **workspace** config root, keyed by organization name:
+
+```text
+<workspace>/.overwire/orgs/<org>/rulesets.json
+<workspace>/.overwire/orgs/<org>/github/rulesets/*.json
+```
+
+The files use the same native export format. Rules from `orgs/<org>/` cascade onto every workspace repository owned by that organization and evaluate alongside the repository's own rulesets, mirroring how organization rules apply on the platform without repository admins being able to override them. Ruleset `conditions` (such as `repository_name`) narrow which repositories a rule targets.
+
+The [demo workspace](/getting-started/demo/) ships a working example: two fictional organizations with org-level signed-commit and review requirements layered over per-repository rules.
+
+## CODEOWNERS
+
 CODEOWNERS evaluation reads your repository's `CODEOWNERS` file directly; changed files are scenario input.

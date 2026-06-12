@@ -18,7 +18,9 @@ overwire init [options]
 | `--owner <owner>` | Organization or user owning this repo. Inferred from the git remote if omitted; falls back to `local` when no remote owner is available. |
 | `--config-root <dir>` | Root for the config tree, relative to cwd (default `.overwire`). |
 | `--force` | Overwrite existing config files. Without it, re-running `init` is create-only and leaves your edits alone. |
-| `--workspace` | Create a workspace-level `.overwire/` with auto-discovered child repos. |
+| `--workspace` | Create a workspace-level `.overwire/` with auto-discovered child repos. Discovering 2+ repositories requires [Pro](/cli/license/); single-repo workspaces stay free. |
+| `--agents` | Also write the [AI agent guide](/cli/agents/) to `.overwire/AGENTS.md` (create-only). |
+| `--json` | Output the scaffold report as JSON. |
 
 ## Workspace mode
 

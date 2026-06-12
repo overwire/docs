@@ -22,9 +22,9 @@ overwire run [options] [file]
 | Option | Description |
 | --- | --- |
 | `--workflow <name-or-file>` | Select a workflow by name, file name, stem, or repo-relative path. |
-| `-e, --event <name>` | Simulated event: `push` (default), `pull_request`, `pull_request_target`, `workflow_dispatch`, `workflow_call`, `repository_dispatch`, `workflow_run`, `schedule`, `release`, `create`, `delete`, `issues`, `issue_comment`, `merge_group`. |
+| `-e, --event <name>` | Simulated event: `push` (default), `pull_request`, `pull_request_target`, `workflow_dispatch`, `workflow_call`, `repository_dispatch`, `workflow_run`, `schedule`, `release`, `create`, `delete`, `issues`, `issue_comment`, `pull_request_review`, `merge_group`. |
 | `-m, --default-mode <mode>` | Step mode default (`skip`, `mock`, `live`); falls back to `modes.yml`, then `mock`. |
-| `--json` | Emit each run event as a JSON line. |
+| `--json` | Emit each run event as a JSON line, ending with one `run:result` envelope (below). |
 | `--mocks-dir <dir>` | Load mock contracts from this directory, recursively. |
 | `--payload <file>` | Event payload override JSON; takes precedence over `.overwire/payloads/<event>.json`. |
 | `--inputs <json>` | `workflow_dispatch`/`workflow_call` inputs as a JSON object. |
@@ -38,8 +38,8 @@ overwire run [options] [file]
 | `--no-action-cache` | Force re-fetch every action ref instead of using the cache. |
 | `--changed-files <path>` | Declare a changed file for trigger path-filter evaluation. Repeatable. |
 | `--force` | Run even when pre-run validation reports errors. |
-| `--rerun-failed <run-id>` | Re-run only the failed or cancelled jobs (and their dependents) of a recorded run; other jobs are restored from the record. |
-| `--watch` | Re-run automatically when workflow or config files change. |
+| `--rerun-failed <run-id>` | Re-run only the failed or cancelled jobs (and their dependents) of a recorded run; other jobs are restored from the record. Requires [Pro](/cli/license/). |
+| `--watch` | Re-run automatically when workflow or config files change. Requires [Pro](/cli/license/). |
 
 ## Examples
 
@@ -62,6 +62,23 @@ overwire run --rerun-failed 01JXAMPLE --docker
 # Watch mode: re-run on changes
 overwire run --workflow ci --watch
 ```
+
+## JSON output
+
+With `--json`, the run streams one event per line (`run:started`, `job:started`, `step:started`, `step:log`, `step:completed`, `job:completed`, `run:completed`) and finishes with a single `run:result` envelope summarizing everything a script or agent needs:
+
+```json
+{
+  "kind": "run:result",
+  "runId": "…",
+  "outcome": "success",
+  "exitCode": 0,
+  "recordPath": "~/.cache/overwire/runs/<owner>/<repo>/<run-id>",
+  "jobs": { "build": { "outcome": "success", "steps": [ { "index": 0, "mode": "mock", "outcome": "success", "conclusion": "success" } ] } }
+}
+```
+
+Failed steps carry `error` and a bounded `stderrTail`; the envelope also includes pre-run validation diagnostics, required-check evaluation, and the API capture summary (with the suggested-mocks path) when present. A validation abort emits the same envelope with `"outcome": "aborted"` before exiting `2`.
 
 ## Behavior notes
 

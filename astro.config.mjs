@@ -87,6 +87,10 @@ export default defineConfig({
             "cli/status",
             "cli/history",
             "cli/cache",
+            "cli/validate",
+            "cli/schema",
+            "cli/agents",
+            "cli/license",
           ],
         },
         {
@@ -102,6 +106,8 @@ export default defineConfig({
             "configuration/payloads",
             "configuration/governance",
             "configuration/scenarios",
+            "configuration/chains",
+            "configuration/custom-properties",
             "configuration/api-mocks",
             "configuration/environments",
             "configuration/instances",
@@ -119,6 +125,10 @@ export default defineConfig({
             "app/runner",
             "app/settings",
           ],
+        },
+        {
+          label: "Automation",
+          items: ["automation/ai-agents"],
         },
         {
           label: "Platform",

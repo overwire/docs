@@ -17,6 +17,7 @@ overwire doctor [options] [command]
 | --- | --- |
 | `--config-root <dir>` | Config tree to inspect (default `.overwire`). |
 | `--bundle [file]` | Write a redacted diagnostic bundle (JSON) for support requests. |
+| `--json` | Output the checks as JSON (`{ outcome, checks, bundlePath? }`). |
 
 ## Subcommands
 

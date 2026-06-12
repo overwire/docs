@@ -23,6 +23,7 @@ overwire resolve [options] <uses>
 | --- | --- |
 | `-w, --workspace <dir>` | Workspace root for `./local` references (default: current working directory). |
 | `--contract` | Emit a mock contract YAML body instead of the raw action JSON. |
+| `--json` | With `--contract`, emit the contract as JSON instead of YAML. |
 
 ## Examples
 

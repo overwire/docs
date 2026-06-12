@@ -17,6 +17,7 @@ overwire cache [options] [command]
 | --- | --- |
 | `--dir <path>` | Cache directory (default `~/.cache/overwire/actions`). |
 | `--clear` | Remove all entries from the cache directory. |
+| `--json` | Output entries and totals as JSON. Applies to `cache` and `cache tool-cache`. |
 
 ## Subcommands
 
