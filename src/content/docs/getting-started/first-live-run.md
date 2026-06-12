@@ -32,3 +32,7 @@ Step output capture is redacted by default, even in live mode, so secret values 
 ## In the desktop app
 
 The workbench shows the same run on the DAG canvas: jobs and steps update as they execute, with logs streaming in the run panel. The Runner page manages the runner image, including pulling and version checks.
+
+## Next step
+
+Want a playground with every feature already wired up? Clone the [demo workspace](/getting-started/demo/).

@@ -54,6 +54,7 @@ export default defineConfig({
             "getting-started/initialize",
             "getting-started/first-mock-run",
             "getting-started/first-live-run",
+            "getting-started/demo",
           ],
         },
         {

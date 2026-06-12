@@ -41,3 +41,5 @@ Identity matters because workflows reference repositories by full name: `uses: a
 When a workflow references a reusable workflow or action in another repository, Overwire resolves the reference against workspace peers first and only then falls back to fetching from the remote. That makes the producer-consumer loop local: edit a reusable workflow in one repo, run its caller in another, and the change is live immediately, no push required.
 
 In the app, peers also keep their editing state separate: tabs are keyed by instance and path, so `variables.yml` from two repositories open side by side without colliding.
+
+For a ready-made multi-repo example, clone the [demo workspace](/getting-started/demo/): four repositories across two fictional organizations, with cross-repo reusable workflows and org-level rulesets.
