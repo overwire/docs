@@ -18,6 +18,24 @@ export default defineConfig({
       editLink: {
         baseUrl: "https://github.com/overwire/docs/edit/main/",
       },
+      favicon: "/favicon.ico",
+      head: [
+        {
+          tag: "link",
+          attrs: {
+            rel: "icon",
+            href: "/favicon.svg",
+            type: "image/svg+xml",
+          },
+        },
+        {
+          tag: "link",
+          attrs: {
+            rel: "apple-touch-icon",
+            href: "/apple-touch-icon.png",
+          },
+        },
+      ],
       customCss: [
         "@fontsource/geist-sans/400.css",
         "@fontsource/geist-sans/500.css",
