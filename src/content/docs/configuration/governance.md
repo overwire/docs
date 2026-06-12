@@ -26,7 +26,7 @@ A [workspace](/concepts/workspaces/) can simulate the rules an organization admi
 <workspace>/.overwire/orgs/<org>/github/rulesets/*.json
 ```
 
-The files use the same native export format. Rules from `orgs/<org>/` cascade onto every workspace repository owned by that organization and evaluate alongside the repository's own rulesets, mirroring how organization rules apply on the platform without repository admins being able to override them. Ruleset `conditions` (such as `repository_name`) narrow which repositories a rule targets.
+The files use the same native export format. Rules from `orgs/<org>/` cascade onto every workspace repository owned by that organization and evaluate alongside the repository's own rulesets, mirroring how organization rules apply on the platform without repository admins being able to override them. Ruleset `conditions` (such as `repository_name`) narrow which repositories a rule targets. The desktop app's [Repository → Organization section](/app/repository/) edits `orgs/<org>/rulesets.json` in place, preserving rule types it does not model.
 
 The [demo workspace](/getting-started/demo/) ships a working example: two fictional organizations with org-level signed-commit and review requirements layered over per-repository rules.
 

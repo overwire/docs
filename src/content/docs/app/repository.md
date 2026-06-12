@@ -11,9 +11,11 @@ In a multi-repo workspace, the switcher at the top of the sidebar picks which re
 
 ## Organization
 
-Sets the repository's owner, which together with the project folder name forms its `owner/repo` identity. Renaming the owner updates `instances.yml` and propagates across the app. When a matching `.overwire/orgs/<owner>/` directory exists at the workspace config root, its organization rulesets are listed read-only here — they cascade onto this repository and merge with repository rulesets during [merge prediction](/app/pull-requests/).
+Sets the repository's owner, which together with the project folder name forms its `owner/repo` identity. Renaming the owner updates `instances.yml` and propagates across the app.
 
-![The organization section with the owner field and an inherited organization ruleset](../../../assets/app/repository--organization.png)
+Below the owner field, the organization's rulesets are edited in place. They live at `.overwire/orgs/<owner>/rulesets.json` under the workspace config root in the platform's native export format, and cascade onto every member repository during [merge prediction](/app/pull-requests/). Each rule carries repository patterns (which repositories it targets), ref patterns, required status checks, and pull request requirements; rule types Overwire does not model are preserved untouched on save. Saving creates the `orgs/<owner>/` directory if it does not exist yet.
+
+![The organization section with the owner field and an editable organization ruleset](../../../assets/app/repository--organization.png)
 
 ## Variables
 
@@ -41,7 +43,7 @@ Edits [`custom-properties.yml`](/configuration/custom-properties/) — organizat
 
 ## Rulesets
 
-Edits [`rulesets.json`](/configuration/governance/) in the platform's native export format. Organization rules appear above repository rules with a source badge; org rules are read-only here and edited through their files under `orgs/<owner>/`.
+Edits [`rulesets.json`](/configuration/governance/) in the platform's native export format. Organization rules appear above repository rules with a source badge; they are read-only in this merged view and edited in the [Organization section](#organization).
 
 ## Statuses
 
