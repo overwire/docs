@@ -15,7 +15,7 @@ The status bar LED shows engine health at all times, and the same probe backs th
 
 ## Runner image
 
-The image section shows whether the configured image is present locally, its compatibility version badge, size, creation date, and digest, with a **Recheck** button to re-probe. The image reference defaults to `overwireio/runner:ubuntu-24.04` and can point at any tag you have built or mirrored; **Pull image** fetches it with progress and a cancel control.
+The image section shows whether the configured image is present locally, its compatibility version badge, size, creation date, and digest, with a **Recheck** button to re-probe. The image reference defaults to [`overwireio/runner:ubuntu-24.04`](https://hub.docker.com/r/overwireio/runner) and can point at any tag you have built or mirrored; **Pull image** fetches it with progress and a cancel control.
 
 The version badge matters: the app and the image share a compatibility contract, and an older image still runs but may fall back on newer features. For example, JavaScript actions declaring `using: node16` or `node24` get the matching side-by-side Node runtime from a v2 image, and fall back to the image's default Node with a step diagnostic on older images.
 
