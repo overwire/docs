@@ -1,0 +1,38 @@
+---
+/* Replaces Starlight's plain-text site title with the brand wordmark:
+   "over" in the foreground color, "wire" in brand blue, plus a muted
+   "Docs" tag. Mirrors the overwire.io nav wordmark. */
+---
+
+<a href="/" class="ow-site-title">
+  <span class="ow-wordmark">over<span class="ow-wire">wire</span></span>
+  <span class="ow-docs">Docs</span>
+</a>
+
+<style>
+  .ow-site-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .ow-wordmark {
+    font-size: 1.3125rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--sl-color-white);
+  }
+  .ow-wire {
+    color: #2563eb;
+  }
+  :global([data-theme="dark"]) .ow-wire {
+    color: #60a5fa;
+  }
+  .ow-docs {
+    font-size: var(--sl-text-sm);
+    font-weight: 500;
+    color: var(--sl-color-gray-3);
+  }
+</style>
