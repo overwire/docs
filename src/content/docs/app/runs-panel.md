@@ -27,13 +27,15 @@ For mockable `uses:` steps the row links to the step's [mock contract](/configur
 
 ## Workflow run
 
-Once a run starts, this tab shows a card per job with its steps, statuses, and mode badges, updating live as output streams in. Click any completed step to open its detail view: full logs, outputs, resolved environment, diagnostics, an expression evaluator for probing `${{ }}` expressions against the run's real context, and a re-run-from-this-step action.
+Once a run starts, this tab shows a card per job with its steps, statuses, and mode badges, updating live as output streams in. Click any step — running or finished — to open its detail view, which puts the log front and center: the log pane fills the panel (streaming live while the step runs), with the error banner pinned above it and annotations, diagnostics, the step summary, outputs, and resolved environment in collapsible sections below. Error annotations and missing-tool diagnostics start expanded. Completed steps also offer an expression evaluator that probes `${{ }}` expressions against the run's recorded context — `github.*`, `vars.*`, `matrix.*`, `needs.*`, and earlier steps resolve exactly as they did mid-run — plus a re-run-from-this-step action. Steps selected before they start show a queued placeholder until output arrives.
 
 ![Job cards for a completed run, one per job including expanded matrix variants](../../../assets/app/runs-panel--workflow-run.png)
 
 ## Run summary
 
 The summary tab condenses the finished run: outcome, per-job durations and outputs, step summaries rendered as Markdown, produced artifacts, and the GitHub API requests the run made against the local mock server, badged as matched or unmatched. From here you can re-run only the failed jobs and their dependents.
+
+Each artifact row expands into a file tree of everything the run stored. Click a text file — an SBOM, a checksum list, a build report — to preview it in the app (JSON is pretty-printed), or use the row actions to open a file with its default application or reveal it in Finder. Artifacts produced by [mock contracts](/configuration/mocks/) carry a `mock` badge so synthetic files are distinguishable from live uploads.
 
 ![The run summary with per-job outcomes and durations](../../../assets/app/runs-panel--run-summary.png)
 

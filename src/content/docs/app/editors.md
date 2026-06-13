@@ -17,7 +17,7 @@ The same diagnostics the [`lint` command](/cli/lint/) reports appear inline: dep
 
 ## Mock contract editor
 
-Mock contract files under `mocks/` open in a structured editor instead of raw YAML: the match target (a `uses:` reference or step ID), a description, expected inputs with required flags and defaults, the outputs to synthesize, and an optional simulated duration. Saving writes the [contract file](/configuration/mocks/) the engine validates against at run time.
+Mock contract files under `mocks/` open in a structured editor instead of raw YAML: the match target (a `uses:` reference or step ID), a description, expected inputs with required flags and defaults, the outputs to synthesize, and an optional simulated duration. Declared [mock artifacts](/configuration/mocks/) appear as a read-only summary in the form; edit them through the raw YAML toggle — form saves always preserve them. Saving writes the contract file the engine validates against at run time.
 
 ![An existing mock contract with its inputs and outputs tables](../../../assets/app/editors--mock-contract.png)
 

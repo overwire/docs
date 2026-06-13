@@ -60,6 +60,47 @@
         ]
       }
     },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "content": {
+                  "type": "string"
+                },
+                "fromFile": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "path"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "name",
+          "files"
+        ],
+        "additionalProperties": false
+      }
+    },
     "durationMs": {
       "type": "number"
     }
