@@ -38,6 +38,7 @@ overwire run [options] [file]
 | `--no-action-cache` | Force re-fetch every action ref instead of using the cache. |
 | `--changed-files <path>` | Declare a changed file for trigger path-filter evaluation. Repeatable. |
 | `--force` | Run even when pre-run validation reports errors. |
+| `--debug` | Enable runner debug mode: `RUNNER_DEBUG=1` in the container environment and `runner.debug` set to `'1'` in expressions. |
 | `--rerun-failed <run-id>` | Re-run only the failed or cancelled jobs (and their dependents) of a recorded run; other jobs are restored from the record. Requires [Pro](/cli/license/). |
 | `--watch` | Re-run automatically when workflow or config files change. Requires [Pro](/cli/license/). |
 
