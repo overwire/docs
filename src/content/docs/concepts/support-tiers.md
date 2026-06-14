@@ -31,6 +31,10 @@ Most actions are just code, and the right way to support them is to run them. Th
 
 Everything else (deploy actions, linters, vendor CLIs) runs live as real action code in the container, or mocks against a [contract](/concepts/mock-contracts/). Overwire does not re-implement third-party products.
 
+## Declared steps, not an action's internal calls
+
+The native artifact and cache services back the **declared** `uses:` steps — `actions/upload-artifact`, `actions/download-artifact`, `actions/cache`. Some actions instead upload artifacts or save caches from *inside their own code*, using GitHub's bundled toolkit. Overwire serves the read side of those internal calls honestly — listing artifacts reflects what the run actually produced — but declines the writes rather than faking storage that was never kept. A live action whose internal upload is declined fails with a clear message naming the fix: run it in `mock` mode, or move the upload to a declared `upload-artifact` / `cache` step.
+
 ## Reading the classification
 
 Two surfaces show the same classification:
