@@ -22,8 +22,8 @@ A single-repo setup is just the degenerate case: the workspace root and the proj
 Every repository in `instances.yml` is an equal peer; there is no primary repository. Each entry stores the instance's full name and its path relative to the workspace root, so the whole workspace stays portable: clone the same directories on another machine and the file still resolves.
 
 ```yaml
-- fullName: acme-corp/hello-app
-  relativePath: hello-app
+- fullName: acme-corp/starter-app
+  relativePath: starter-app
 - fullName: acme-corp/enterprise-actions
   relativePath: enterprise-actions
 ```
@@ -42,4 +42,4 @@ When a workflow references a reusable workflow or action in another repository, 
 
 In the app, peers also keep their editing state separate: tabs are keyed by instance and path, so `variables.yml` from two repositories open side by side without colliding.
 
-For a ready-made multi-repo example, clone the [demo workspace](/getting-started/demo/): four repositories across two fictional organizations, with cross-repo reusable workflows and org-level rulesets.
+For a ready-made multi-repo example, clone the [demo workspace](/getting-started/demo/) and open the `multi-repo-demo/` directory: four repositories across two fictional organizations, with cross-repo reusable workflows and org-level rulesets.

@@ -1,11 +1,11 @@
 ---
 title: Demo workspace
-description: A ready-made four-repo workspace that exercises every Overwire feature. Clone it and explore.
+description: Ready-made demo workspaces that exercise every Overwire feature. Clone and explore.
 sidebar:
   order: 5
 ---
 
-[`overwire/demo`](https://github.com/overwire/demo) is a workspace of fictional repositories built to exercise Overwire end-to-end. Every supported workflow feature has a runnable example somewhere inside: reusable workflows, matrices, services containers, environment protection, rulesets, pull request scenarios, and workflow chains. It is the fastest way to see what Overwire can do before wiring up your own repositories.
+[`overwire/demo`](https://github.com/overwire/demo) ships two demo workspaces: a single-repo free demo and a four-repo multi-repo workspace for Pro features. Every supported workflow feature has a runnable example somewhere inside: reusable workflows, matrices, services containers, environment protection, rulesets, pull request scenarios, and workflow chains.
 
 ## Get it
 
@@ -13,15 +13,37 @@ sidebar:
 git clone https://github.com/overwire/demo.git
 ```
 
-Open the cloned `demo` directory in the desktop app. The workspace's `.overwire/instances.yml` lists four repositories, so the sidebar shows them all as equal peers. From the CLI, run commands from the workspace root and point `--config-root` at the repository you want.
+## Single-repo demo (free)
 
-## What's inside
+Open the `single-repo-demo/` directory in the desktop app, or initialize from the CLI:
+
+```sh
+cd single-repo-demo
+overwire init
+overwire run .github/workflows/ci.yml --config-root .overwire --event push
+```
+
+Two workflows are included:
+
+- **ci.yml** — a build-and-report pipeline with checkout, setup-node, npm test, and a Markdown step summary.
+- **env-and-expressions.yml** — exercises variables, secrets, and expression evaluation.
+
+Pre-configured `.overwire/` files include variables, secrets, step modes, dispatch defaults, and event payloads.
+
+## Multi-repo demo (Pro)
+
+Open the `multi-repo-demo/` directory in the desktop app, or initialize from the CLI:
+
+```sh
+cd multi-repo-demo
+overwire init --workspace
+```
 
 Four repositories under two fictional organizations, `acme-corp` and `wire-corp`:
 
 | Repository | What it shows |
 | --- | --- |
-| `hello-app` | The first five minutes. A small CI workflow that calls a reusable workflow, chains job outputs, and writes a Markdown step summary. |
+| `starter-app` | A small CI workflow that calls a reusable workflow, chains job outputs, and writes a Markdown step summary. |
 | `pipeline-app` | A full CI/CD pipeline. Static and dynamic matrices, concurrency, secrets, environment protection, services containers, releases, repository dispatch, and workflow chains. |
 | `compliance-app` | Governance. Repository and org rulesets, CODEOWNERS, pre-staged pull request scenarios, check runs posted to the API mock, scheduled audits, and a merge queue trigger. |
 | `enterprise-actions` | The shared producer repository: ten reusable workflows plus composite and Docker actions consumed by the other three. |
@@ -30,11 +52,11 @@ Org-level rulesets live in `.overwire/orgs/` at the workspace root and cascade o
 
 ## Things to try
 
-**Run hello-app's CI.** The build job calls a reusable workflow that resolves locally from `enterprise-actions`, because both repositories are [workspace peers](/concepts/workspaces/):
+**Run starter-app's CI.** The build job calls a reusable workflow that resolves locally from `enterprise-actions`, because both repositories are [workspace peers](/concepts/workspaces/):
 
 ```sh
-overwire run hello-app/.github/workflows/ci.yml \
-  --config-root hello-app/.overwire --event push
+overwire run starter-app/.github/workflows/ci.yml \
+  --config-root starter-app/.overwire --event push
 ```
 
 **Deploy with typed inputs and environment protection.** The deploy workflow takes a version, an environment choice, and a dry-run flag, and its deploy job waits on the staging environment's protection rules:
@@ -58,7 +80,7 @@ overwire chain compliance-app/.overwire/chains/pr-lifecycle.yml \
 overwire lint compliance-app/.github/workflows/bad-practices.yml
 ```
 
-The repository's [README](https://github.com/overwire/demo#readme) documents every flow and carries a capability matrix mapping each feature to the workflow that demonstrates it. [CLI-TEST-COMMANDS.md](https://github.com/overwire/demo/blob/main/CLI-TEST-COMMANDS.md) is a command-by-command tour of the whole workspace.
+The multi-repo demo's [CLI-TEST-COMMANDS.md](https://github.com/overwire/demo/blob/main/multi-repo-demo/CLI-TEST-COMMANDS.md) is a command-by-command tour of the whole workspace.
 
 ## Mock by default
 
