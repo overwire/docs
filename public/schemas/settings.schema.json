@@ -18,6 +18,18 @@
       },
       "additionalProperties": false
     },
+    "runner": {
+      "type": "object",
+      "properties": {
+        "allowHostMounts": {
+          "type": "boolean"
+        },
+        "allowPrivileged": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
     "remote": {
       "type": "object",
       "properties": {
