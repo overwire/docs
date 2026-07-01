@@ -23,10 +23,10 @@ Download the DMG for your architecture from [overwire.io](https://overwire.io/#d
 
 ## CLI
 
-The CLI will be published as `@overwire/cli` on npm at launch:
+Install the CLI from npm:
 
 ```sh
-npm install -g @overwire/cli
+npm install -g overwire
 ```
 
 Verify the environment once installed:
