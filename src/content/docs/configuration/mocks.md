@@ -49,4 +49,6 @@ artifacts:
 
 At run time a mocked step validates required inputs against the action's real `action.yml` and returns the declared outputs, so `${{ steps.<id>.outputs.* }}` expressions keep working downstream. A mocked `actions/upload-artifact` step that declares artifacts also synthesizes the action's `artifact-id`, `artifact-url`, and `artifact-digest` outputs (explicit `outputs` entries win). Fixture references cannot escape the `mocks/` directory, and binary fixtures are copied byte for byte.
 
+Mocked steps narrate what the engine did in the step log: which contract matched (and its source file), the input validation result, each returned output, and any declared duration. A mocked step with no matching contract says so explicitly and succeeds with no outputs.
+
 Generate contracts with [`overwire seed-mocks`](/cli/seed-mocks/), including `--from-run` to capture outputs a real run produced, or [`overwire resolve --contract`](/cli/resolve/) for a single action.
