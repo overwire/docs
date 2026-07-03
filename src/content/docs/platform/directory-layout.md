@@ -25,7 +25,7 @@ Overwire separates committable project config from local machine state. This pag
 | `~/.cache/overwire/concurrency/` | Cross-process concurrency lock files. |
 | `~/Library/Application Support/Overwire/` | Desktop app state: window layout, recent projects, theme, runner image settings. |
 
-Windows and Linux layouts will be documented when those builds ship.
+The Windows layout will be documented when that build ships.
 
 ## What is safe to delete
 
