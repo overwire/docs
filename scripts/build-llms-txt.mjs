@@ -98,7 +98,7 @@ indexLines.push(
   '',
   `- [Full documentation as one file](${SITE}/llms-full.txt)`,
   '',
-  'Overwire is not affiliated with, endorsed by, or sponsored by GitHub, Inc., Microsoft Corporation, or Docker, Inc. GitHub and GitHub Actions are trademarks of GitHub, Inc.',
+  'Overwire is not affiliated with, endorsed by, or sponsored by GitHub, Inc. GitHub and GitHub Actions are trademarks of GitHub, Inc.',
 );
 
 await writeFile(join(DIST_DIR, 'llms.txt'), `${indexLines.join('\n')}\n`, 'utf8');
