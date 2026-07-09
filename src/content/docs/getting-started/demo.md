@@ -9,6 +9,8 @@ sidebar:
 
 ## Get it
 
+The desktop app ships with the single-repo demo built in — click **Try the demo** at the bottom of the start screen for a ready-to-run copy, no clone needed. To explore everything (or drive the demos from the CLI), clone the repository:
+
 ```sh
 git clone https://github.com/overwire/demo.git
 ```

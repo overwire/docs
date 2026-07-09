@@ -56,9 +56,9 @@ The app starts on an open-project screen until you point it at a directory:
 
 ![The open-project screen on first launch](../../../assets/app/setup--open-project.png)
 
-Opening a directory without a `.overwire/` tree shows a splash screen with an initialize action that does the same scaffolding, including child-repo auto-discovery:
+Opening a repository — or a folder of repositories — sets it up automatically: the app scaffolds `.overwire/` (including the `.gitignore` and child-repo auto-discovery) and announces it, with no separate initialize step. Only a directory with no workflow files anywhere shows a guidance screen instead, with a **Set up here anyway** action for repositories you are starting from scratch:
 
-![The initialize splash for a directory that has no .overwire tree yet](../../../assets/app/setup--initialize.png)
+![The guidance screen for a directory with no workflow files](../../../assets/app/setup--initialize.png)
 
 ## Next step
 
