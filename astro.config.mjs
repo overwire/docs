@@ -15,6 +15,8 @@ export default defineConfig({
         "Documentation for Overwire, a local workflow workbench. Run, mock, and debug your GitHub Actions workflow files locally.",
       social: [
         {
+          // Deliberately the docs source repo, not the org: the README and
+          // per-page Edit links invite doc-fix PRs (owner decision, DOCS-5).
           icon: "github",
           label: "GitHub",
           href: "https://github.com/overwire/docs",
