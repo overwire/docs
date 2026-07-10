@@ -90,7 +90,7 @@ export const sidebar = [
   },
   {
     label: "Platform",
-    items: ["platform/directory-layout", "platform/uninstall", "platform/privacy"],
+    items: ["platform/directory-layout", "platform/uninstall", "platform/privacy", "platform/changelog"],
   },
   {
     label: "Troubleshooting",

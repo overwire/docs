@@ -5,25 +5,19 @@ sidebar:
   order: 1
 ---
 
-Overwire ships as a macOS desktop app with a scriptable CLI companion. Both run the same engine.
+Overwire ships as a desktop app with a scriptable CLI companion. Both run the same engine.
 
-:::note
-Overwire is available today for macOS (Apple silicon and Intel). Windows (x64) is next — [overwire.io](https://overwire.io/#download) has the current downloads.
-:::
+## macOS
 
-## Requirements
+Download the DMG for your architecture (Apple silicon or Intel) from [overwire.io](https://overwire.io/#download), drag Overwire to Applications, and open it. The app is signed and notarized.
 
-- **macOS** (Apple silicon or Intel) for the desktop app.
-- **A Docker-API-compatible container engine** (e.g., Docker Desktop, Colima, OrbStack, Rancher Desktop) for live step execution. Mock runs, parsing, linting, and simulation work without one.
-- **Node.js** for the CLI.
+## Windows
 
-## Desktop app
+Coming next: an x64 installer of the same app. [overwire.io](https://overwire.io/#download) has current availability.
 
-Download the DMG for your architecture from [overwire.io](https://overwire.io/#download), drag Overwire to Applications, and open it. The app is signed and notarized.
+## CLI (any platform with Node.js)
 
-## CLI
-
-Install the CLI from npm:
+The CLI requires **Node.js 20 or newer**. Install it from npm:
 
 ```sh
 npm install -g overwire
@@ -36,6 +30,10 @@ overwire doctor
 ```
 
 `doctor` checks your Node version, container engine reachability, and the `.overwire/` config tree, and tells you exactly what is missing for live runs.
+
+## Live execution (optional)
+
+Live step execution needs a **Docker-API-compatible container engine** (e.g., Docker Desktop, Colima, OrbStack, Rancher Desktop). Mock runs, parsing, linting, and simulation work without one.
 
 ## Next step
 

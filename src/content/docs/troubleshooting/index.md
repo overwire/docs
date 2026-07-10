@@ -9,7 +9,7 @@ description: Diagnose environment problems with doctor and share a redacted diag
 overwire doctor
 ```
 
-`doctor` checks your Node version, container engine reachability, and the `.overwire/` config tree, and reports exactly what live runs are missing. `overwire doctor capabilities` breaks down feature support in detail.
+`doctor` checks your Node version (the CLI needs Node 20+), container engine reachability, and the `.overwire/` config tree, and reports exactly what live runs are missing. `overwire doctor capabilities` breaks down feature support in detail.
 
 ## Diagnostic bundles
 
