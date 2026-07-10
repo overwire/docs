@@ -1,8 +1,6 @@
 ---
 title: pull-requests.yml and statuses.yml
 description: "Local PR scenarios and external commit statuses or check runs."
-sidebar:
-  order: 9
 ---
 
 These two files describe platform state that workflows and merge prediction consume: pull requests that "exist" and statuses that "already happened". JSON Schemas: [`pull-requests`](/schemas/pull-requests.schema.json) and [`statuses`](/schemas/statuses.schema.json), also printable offline with [`overwire schema`](/cli/schema/).

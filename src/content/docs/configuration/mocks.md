@@ -1,8 +1,6 @@
 ---
 title: mocks/
 description: "Mock contracts for uses: steps."
-sidebar:
-  order: 6
 ---
 
 Mock contracts live as YAML files under `mocks/`, conventionally named after the action with slashes replaced by dashes: `actions-checkout-v4.yml`.

@@ -1,8 +1,6 @@
 ---
 title: overwire chain
 description: "Run or inspect workflow-chain scenario sessions."
-sidebar:
-  order: 10
 ---
 
 Runs multi-workflow scenario sessions from a chain YAML file: ordered runs plus downstream `workflow_run` traversal, recorded as one session. Also lists and shows past sessions.

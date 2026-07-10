@@ -1,8 +1,6 @@
 ---
 title: overwire lint
 description: "Lint a workflow file for common issues."
-sidebar:
-  order: 6
 ---
 
 Lints a workflow file for common issues: deprecated workflow commands, unpinned action references, duplicate step IDs, and unknown runner labels.

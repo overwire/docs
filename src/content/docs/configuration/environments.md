@@ -1,8 +1,6 @@
 ---
 title: environments/
 description: "Per-environment variables, secrets, and protection rules."
-sidebar:
-  order: 11
 ---
 
 One directory per deployment environment: `environments/<name>/`, mirroring how `environment:` on a job scopes variables, secrets, and protection upstream.

@@ -1,8 +1,6 @@
 ---
 title: settings.yml
 description: "Repository owner and Overwire settings."
-sidebar:
-  order: 2
 ---
 
 Core settings for one repository.

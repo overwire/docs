@@ -1,8 +1,6 @@
 ---
 title: Settings
 description: "Application settings cover appearance, secret storage, privacy, and support tooling."
-sidebar:
-  order: 7
 ---
 
 Settings open with `⌘,` or the gear in the top navigation. The sections cover appearance, secret storage, privacy, run history retention, and support tooling.

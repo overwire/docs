@@ -1,8 +1,6 @@
 ---
 title: overwire list
 description: "List workflows with their triggers and jobs."
-sidebar:
-  order: 5
 ---
 
 Lists every workflow in a directory with its triggers and jobs.

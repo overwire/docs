@@ -1,8 +1,6 @@
 ---
 title: Demo workspace
 description: Ready-made demo workspaces that exercise every Overwire feature. Clone and explore.
-sidebar:
-  order: 5
 ---
 
 [`overwire/demo`](https://github.com/overwire/demo) ships two demo workspaces: a single-repo free demo and a four-repo multi-repo workspace for Pro features. (Pro applies only to opening the multi-repo workspace in the desktop app — every CLI command below is free.) Every supported workflow feature has a runnable example somewhere inside: reusable workflows, matrices, services containers, environment protection, rulesets, pull request scenarios, and workflow chains.

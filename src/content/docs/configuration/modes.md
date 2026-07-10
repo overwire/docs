@@ -1,8 +1,6 @@
 ---
 title: modes/
 description: "Workflow default mode and per-job, per-step overrides."
-sidebar:
-  order: 5
 ---
 
 One file per workflow, `modes/<workflow>.yml`, holding the default mode and overrides. Your workflow YAML is never touched.

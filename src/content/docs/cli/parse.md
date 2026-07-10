@@ -1,8 +1,6 @@
 ---
 title: overwire parse
 description: "Parse a workflow YAML file and print its structure."
-sidebar:
-  order: 4
 ---
 
 Parses a workflow file and prints its structure: name, triggers, jobs, steps, and how Overwire interpreted them. Useful for confirming that a workflow means what you think it means before running it.

@@ -1,8 +1,6 @@
 ---
 title: payloads/ and dispatch/
 description: "Saved event payload overrides and workflow_dispatch input defaults."
-sidebar:
-  order: 7
 ---
 
 ## `payloads/<event>.json`

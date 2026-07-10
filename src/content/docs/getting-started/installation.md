@@ -1,8 +1,6 @@
 ---
 title: Installation
 description: Install the Overwire desktop app and CLI.
-sidebar:
-  order: 1
 ---
 
 Overwire ships as a desktop app with a scriptable CLI companion. Both run the same engine.

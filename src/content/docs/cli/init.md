@@ -1,8 +1,6 @@
 ---
 title: overwire init
 description: "Scaffold a flat .overwire/ config tree."
-sidebar:
-  order: 2
 ---
 
 Scaffolds the `.overwire/` config root: `settings.yml`, `variables.yml`, `secrets.yml`, the `modes/`, `mocks/`, and `payloads/` directories, and a `.gitignore` that keeps secret values and local run state out of git.

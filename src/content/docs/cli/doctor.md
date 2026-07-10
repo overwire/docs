@@ -1,8 +1,6 @@
 ---
 title: overwire doctor
 description: "Health-check Node, the container engine, and the .overwire config tree."
-sidebar:
-  order: 3
 ---
 
 Runs a quick health check on Overwire's environment: Node version, container engine reachability, and the `.overwire/` config tree. The output tells you exactly what live runs are missing.

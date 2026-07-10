@@ -1,8 +1,6 @@
 ---
 title: First mock run
 description: Execute a workflow locally with every step mocked. No container engine required.
-sidebar:
-  order: 3
 ---
 
 Mock is Overwire's default mode. A mock run parses your workflow, evaluates triggers and expressions against a simulated event, schedules jobs in dependency order, and synthesizes step outputs from mock contracts. No container engine is required.

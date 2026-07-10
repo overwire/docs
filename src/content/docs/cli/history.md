@@ -1,8 +1,6 @@
 ---
 title: overwire history
 description: "List recent workflow runs from the run store."
-sidebar:
-  order: 14
 ---
 
 Lists recent workflow runs for the current project from the run store, with subcommands for run details and retention.

@@ -1,8 +1,6 @@
 ---
 title: instances.yml
 description: "The workspace peer list for multi-repo workspaces."
-sidebar:
-  order: 12
 ---
 
 Present only in a workspace-level `.overwire/`. A bare YAML list of the repositories in the workspace:

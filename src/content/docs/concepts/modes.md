@@ -1,8 +1,6 @@
 ---
 title: Step modes
 description: Every step has a mode, skip, mock, or live. Modes live in sidecar config, never in your workflow YAML.
-sidebar:
-  order: 1
 ---
 
 Every step in every job has exactly one mode. The mode decides what happens when the scheduler reaches that step:

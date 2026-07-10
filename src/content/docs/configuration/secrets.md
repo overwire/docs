@@ -1,8 +1,6 @@
 ---
 title: secrets.yml
 description: "Secret declarations, optionally with local-only values."
-sidebar:
-  order: 4
 ---
 
 Secret declarations for `${{ secrets.* }}`. Each entry takes one of three forms:

@@ -1,8 +1,6 @@
 ---
 title: overwire agents
 description: "Print the guide for AI agents driving Overwire."
-sidebar:
-  order: 18
 ---
 
 Prints a compact, version-matched guide written for AI coding agents that drive Overwire through files and the CLI: the config file map with schema ids, the command map with JSON flags, exit codes, the validate–run–inspect feedback loop, step mode semantics, and the free/Pro split.

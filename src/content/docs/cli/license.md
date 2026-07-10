@@ -1,8 +1,6 @@
 ---
 title: overwire license
 description: "Manage the Overwire Pro license shared with the desktop app."
-sidebar:
-  order: 19
 ---
 
 Manages the Overwire Pro license on this machine. The CLI and the desktop app share one license file, so activating on either covers both.

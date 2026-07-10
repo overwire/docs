@@ -1,8 +1,6 @@
 ---
 title: overwire run
 description: "Execute a workflow locally. Mock by default, live in a container with --docker."
-sidebar:
-  order: 9
 ---
 
 Executes one workflow locally. Mock is the default mode; `--docker` executes live steps in the runner container. Pre-run validation catches undefined secrets, missing required inputs, and dependency cycles before anything executes.

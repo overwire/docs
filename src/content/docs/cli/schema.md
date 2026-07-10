@@ -1,8 +1,6 @@
 ---
 title: overwire schema
 description: "Print the JSON Schema for any .overwire/ config file format."
-sidebar:
-  order: 17
 ---
 
 Prints the JSON Schema for a `.overwire/` config file format — the same schema the loader validates with at run time, so it can never drift from real behavior. Works offline and always matches the installed version.

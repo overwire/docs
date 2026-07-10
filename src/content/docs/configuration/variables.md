@@ -1,8 +1,6 @@
 ---
 title: variables.yml
 description: "Repository variables resolved by vars.* expressions."
-sidebar:
-  order: 3
 ---
 
 A flat map of repository variables, exposed as `${{ vars.* }}` in expressions. Values may be strings, numbers, or booleans; all are coerced to strings, matching how the platform treats variables.

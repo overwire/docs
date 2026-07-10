@@ -1,8 +1,6 @@
 ---
 title: rulesets.json
 description: "Branch rulesets in GitHub's native export format."
-sidebar:
-  order: 8
 ---
 
 Branch rulesets in the platform's native ruleset export format. Export a ruleset from your repository settings upstream and drop the JSON here; Overwire evaluates the same rules locally.

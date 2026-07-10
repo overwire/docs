@@ -1,8 +1,6 @@
 ---
 title: overwire seed-mocks
 description: "Write a mock contract for every uses: step in a workflow."
-sidebar:
-  order: 12
 ---
 
 Walks every `uses:` reference in a workflow and writes a mock contract for each into `.overwire/mocks/`, resolving each action's real `action.yml` to derive inputs and outputs.

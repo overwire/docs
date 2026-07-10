@@ -1,8 +1,6 @@
 ---
 title: Automate Overwire with AI agents
 description: "Drive Overwire from AI coding agents: files are the API, the CLI is the executor."
-sidebar:
-  order: 1
   label: AI agents
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: custom-properties.yml
 description: "Repository custom properties that surface in event payloads."
-sidebar:
-  order: 11
 ---
 
 Repository custom properties — the key/value metadata an organization defines for its repositories (team ownership, compliance tier, data classification). On the platform these surface inside event payloads under `repository.custom_properties`; Overwire reads this file to do the same locally. JSON Schema: [`custom-properties`](/schemas/custom-properties.schema.json).

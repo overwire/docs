@@ -1,8 +1,6 @@
 ---
 title: Configuration overview
 description: "Every file in the .overwire/ config root and what it does."
-sidebar:
-  order: 1
   label: Overview
 ---
 

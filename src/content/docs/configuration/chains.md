@@ -1,8 +1,6 @@
 ---
 title: chains/
 description: "Workflow chain scenarios: ordered multi-workflow sessions run as one unit."
-sidebar:
-  order: 10
 ---
 
 A chain is an ordered list of workflow runs executed as one session — CI then deploy, release then publish. Chain scenario files live in `.overwire/chains/<name>.yml` and run with [`overwire chain <file>`](/cli/chain/). JSON Schema: [`chain`](/schemas/chain.schema.json).

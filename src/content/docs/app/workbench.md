@@ -1,8 +1,6 @@
 ---
 title: The workbench
 description: "The workbench page is the main view: a filterable workflow list, the interactive DAG canvas, and a detail panel."
-sidebar:
-  order: 1
 ---
 
 The workbench is the page you land on: a filterable workflow list on the left, an interactive DAG canvas in the middle, and a detail panel on the right. Select a workflow, trigger it, and watch the graph light up as jobs complete.

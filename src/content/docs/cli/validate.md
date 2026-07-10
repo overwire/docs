@@ -1,8 +1,6 @@
 ---
 title: overwire validate
 description: "Validate every workflow and config file in the project without running anything."
-sidebar:
-  order: 16
 ---
 
 Validates the whole project in one pass without executing anything: parses every workflow, lints each one, runs static expression analysis (bad `needs`/`steps`/`matrix` references), loads every `.overwire/` config file through its real loader, and checks every chain scenario. The fastest pre-run feedback loop for hand-written and generated projects alike.

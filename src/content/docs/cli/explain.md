@@ -1,8 +1,6 @@
 ---
 title: overwire explain
 description: "Explain how Overwire would support a workflow without running it."
-sidebar:
-  order: 7
 ---
 
 Prints the support plan for a workflow without executing anything: for every job and step, how Overwire would satisfy it (runner shell, Overwire service, action code, mock contract), its support status, and any warnings or configuration it needs.

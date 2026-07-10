@@ -1,8 +1,6 @@
 ---
 title: The runner page
 description: "The runner page manages the container engine connection and the Overwire runner image."
-sidebar:
-  order: 6
 ---
 
 Live steps execute inside a runner container, never on your machine directly. The Runner page (the **Runner** tab in the top navigation) manages the two things that makes that work: the connection to a Docker-API-compatible container engine, and the runner image itself.

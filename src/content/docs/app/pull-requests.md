@@ -1,8 +1,6 @@
 ---
 title: Pull requests
 description: "The pull requests page evaluates local PR scenarios against rulesets and required checks to predict the merge outcome."
-sidebar:
-  order: 4
 ---
 
 The Pull Requests page answers one question before you push: **would this PR be mergeable?** It evaluates local PR scenarios against your rulesets, required status checks, and CODEOWNERS rules, and renders the verdict the platform would reach. Everything is local scenario data; nothing is fetched from or written to any remote.

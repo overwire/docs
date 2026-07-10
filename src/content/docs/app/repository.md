@@ -1,8 +1,6 @@
 ---
 title: Repository settings
 description: "The repository page edits per-repo platform state: organization, variables, secrets, environments, custom properties, rulesets, and statuses."
-sidebar:
-  order: 5
 ---
 
 The Repository page collects every repository-scoped scenario input in one place. Each section is a structured editor over a file in the [config root](/concepts/config-root/), so everything you change here stays diffable, scriptable, and editable outside the app. Editors that sit over a single file have a raw-YAML toggle in their header.

@@ -1,8 +1,6 @@
 ---
 title: The runs panel
 description: "The bottom panel follows a run from configuration to summary across four tabs: Support plan, Trigger event, Workflow run, and Run summary."
-sidebar:
-  order: 2
 ---
 
 The bottom panel follows a run through its whole lifecycle across four tabs: **Support plan**, **Trigger event**, **Workflow run**, and **Run summary**. Toggle it with `⌘J`, or maximize it with the expand button in the tab bar.

@@ -1,8 +1,6 @@
 ---
 title: overwire cache
 description: "Inspect or clear the action cache and the persisted tool cache."
-sidebar:
-  order: 15
 ---
 
 Inspects or clears the action source cache used by `--docker` live runs, with a subcommand for the persisted runner tool cache.

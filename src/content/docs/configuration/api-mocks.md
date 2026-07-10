@@ -1,8 +1,6 @@
 ---
 title: api-mocks.yml
 description: "Declarative GitHub API mock routes with capture and suggest."
-sidebar:
-  order: 10
 ---
 
 Declarative mock routes for the local GitHub API server. Steps inside the container talk to the injected `GITHUB_API_URL`, so workflow code calling the API hits your mocks instead of the network.

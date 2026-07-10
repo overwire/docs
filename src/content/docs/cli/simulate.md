@@ -1,8 +1,6 @@
 ---
 title: overwire simulate
 description: "Print a simulated event payload, optionally wrapped in a full github context."
-sidebar:
-  order: 8
 ---
 
 Prints the synthetic event payload Overwire would use for a given trigger, so you can see exactly what `${{ github.event.* }}` will contain before running anything.

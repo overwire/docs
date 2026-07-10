@@ -1,8 +1,6 @@
 ---
 title: First live run
 description: Execute workflow steps for real inside the Overwire runner container.
-sidebar:
-  order: 4
 ---
 
 Live mode executes steps inside a runner container that Overwire manages. Workflow commands never run directly on your machine: the host plans, schedules, and observes; the container executes.

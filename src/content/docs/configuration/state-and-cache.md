@@ -1,8 +1,6 @@
 ---
 title: state/ and cache/
 description: "Run-derived state and the local workflow cache. Local-only."
-sidebar:
-  order: 13
 ---
 
 Both directories are written by runs, ignored by the scaffolded `.gitignore`, and safe to delete.

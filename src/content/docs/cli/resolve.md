@@ -1,8 +1,6 @@
 ---
 title: overwire resolve
 description: "Fetch and parse an action's action.yml; optionally print a mock contract."
-sidebar:
-  order: 11
 ---
 
 Fetches and parses the `action.yml` for a `uses:` reference, printing the action's inputs, outputs, and kind. With `--contract`, prints an auto-generated mock contract you can drop into `.overwire/mocks/`.

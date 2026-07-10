@@ -1,8 +1,6 @@
 ---
 title: overwire status
 description: "Show latest workflow and check status for a repository ref or SHA."
-sidebar:
-  order: 13
 ---
 
 Summarizes the latest recorded workflow runs, commit statuses, check results, and PR state for a ref, SHA, or pull request, the local equivalent of glancing at a commit's checks page.

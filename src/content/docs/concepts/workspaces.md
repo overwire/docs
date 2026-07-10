@@ -1,8 +1,6 @@
 ---
 title: Workspaces and instances
 description: How Overwire models repositories, owners, and multi-repo workspaces.
-sidebar:
-  order: 2
 ---
 
 A workspace is the directory you open. It may contain a single repository or many peer repositories listed in `.overwire/instances.yml`. Each repository is an instance with an `owner/repo` identity derived from its `settings.yml` owner and folder name.
@@ -18,6 +16,8 @@ A workspace is the directory you open. It may contain a single repository or man
 A single-repo setup is just the degenerate case: the workspace root and the project root are the same directory, and `instances.yml` has one entry whose relative path is `.`.
 
 ## Peers, not satellites
+
+Multi-repo workspaces open in the desktop app with [Pro](/concepts/licensing/); every CLI workspace command is free, like the rest of the [CLI](/cli/license/).
 
 Every repository in `instances.yml` is an equal peer; there is no primary repository. Each entry stores the instance's full name and its path relative to the workspace root, so the whole workspace stays portable: clone the same directories on another machine and the file still resolves.
 

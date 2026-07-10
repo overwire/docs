@@ -1,8 +1,6 @@
 ---
 title: Initialize a project
 description: Scaffold the .overwire/ config tree with overwire init.
-sidebar:
-  order: 2
 ---
 
 Overwire keeps all of its state in a flat `.overwire/` directory next to your `.github/` tree. Your workflow YAML is never modified: step modes, mock contracts, payloads, and platform scenario files all live as plain, diffable sidecar files.

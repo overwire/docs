@@ -1,8 +1,6 @@
 ---
 title: Editors
 description: "The explorer page opens workflow and config files in tabbed editors with inline lint diagnostics and mode controls."
-sidebar:
-  order: 3
 ---
 
 The Explorer page pairs a workspace tree with tabbed editors. The tree shows each repository's `.github/workflows/` files and its `.overwire/` config directory; tabs are keyed by repository and path, so `variables.yml` from two repos in the same workspace open as separate tabs without colliding.
