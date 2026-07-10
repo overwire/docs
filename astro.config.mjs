@@ -7,6 +7,10 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Overwire Docs",
+      editLink: {
+        baseUrl: "https://github.com/overwire/docs/edit/main/",
+      },
+      lastUpdated: true,
       description:
         "Documentation for Overwire, a local workflow workbench. Run, mock, and debug your GitHub Actions workflow files locally.",
       social: [

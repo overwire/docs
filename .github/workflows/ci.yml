@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Starlight's lastUpdated dates read git history; a shallow clone
+          # would stamp every page with the clone date.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Schemas consistent with index.json
+        run: npm run check:schemas
+
+      - name: Unit tests (llms.txt generator)
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: llms outputs exist and are non-empty
+        run: |
+          test -s dist/llms.txt
+          test -s dist/llms-full.txt
+
+      - name: Internal links and anchors
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --include-fragments 'dist/**/*.html'
+          fail: true
+
+      - name: External links (advisory — rot is visible, not blocking)
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress 'dist/**/*.html'
+          fail: true
