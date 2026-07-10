@@ -1,0 +1,30 @@
+# Fixture Splash
+
+Source: https://docs.example.test/
+
+**First card**
+    Card body text.
+
+---
+
+# Links Page
+
+Source: https://docs.example.test/guide/links/
+
+See [the reference](https://docs.example.test/reference/thing/) and [image: a screenshot] plus [sibling](https://docs.example.test/guide/crlf/).
+
+---
+
+# CRLF Page
+
+Source: https://docs.example.test/guide/crlf/
+
+A body line with windows endings.
+
+---
+
+# Reference Thing
+
+Source: https://docs.example.test/reference/thing/
+
+Reference body.

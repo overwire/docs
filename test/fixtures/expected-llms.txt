@@ -1,0 +1,26 @@
+# Overwire
+
+> Overwire is a local workflow workbench: run, mock, and debug your GitHub Actions workflow files locally. These docs cover the desktop app, the scriptable CLI, and the flat .overwire/ configuration model.
+
+JSON Schemas for every .overwire/ config format: https://docs.example.test/schemas/index.json
+Demo workspace: https://github.com/overwire/demo — agent guide: run `overwire agents`.
+
+
+## Overview
+
+- [Fixture Splash](https://docs.example.test/): The splash fixture.
+
+## Guide
+
+- [Links Page](https://docs.example.test/guide/links/): Exercises link rewriting.
+- [CRLF Page](https://docs.example.test/guide/crlf/): Saved with CRLF endings.
+
+## Reference
+
+- [Reference Thing](https://docs.example.test/reference/thing/): A reference page.
+
+## Optional
+
+- [Full documentation as one file](https://docs.example.test/llms-full.txt)
+
+Overwire is not affiliated with, endorsed by, or sponsored by GitHub, Inc. "GitHub" and "GitHub Actions" are trademarks of GitHub, Inc.

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && node scripts/build-llms-txt.mjs",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "node --test test/"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.40.0",
