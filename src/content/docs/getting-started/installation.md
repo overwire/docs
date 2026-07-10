@@ -8,7 +8,7 @@ sidebar:
 Overwire ships as a macOS desktop app with a scriptable CLI companion. Both run the same engine.
 
 :::note
-Overwire is in pre-release. Download links go live at launch on [overwire.io](https://overwire.io/#download).
+Overwire is available today for macOS (Apple silicon and Intel). Windows (x64) is next — [overwire.io](https://overwire.io/#download) has the current downloads.
 :::
 
 ## Requirements
