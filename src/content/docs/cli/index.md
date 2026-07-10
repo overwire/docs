@@ -1,6 +1,7 @@
 ---
 title: CLI overview
 description: The overwire command line, every command at a glance.
+sidebar:
   label: Overview
 ---
 
