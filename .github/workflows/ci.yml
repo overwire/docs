@@ -49,5 +49,13 @@ jobs:
         continue-on-error: true
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --root-dir ${{ github.workspace }}/dist 'dist/**/*.html'
+          # Edit-page links are deterministic self-references to this repo's
+          # edit UI — nothing to learn from requesting 62 of them (GitHub
+          # rate-limits the burst). 429 anywhere means "slow down", not rot.
+          args: >-
+            --no-progress
+            --root-dir ${{ github.workspace }}/dist
+            --exclude 'github\.com/overwire/docs/edit/'
+            --accept '100..=103,200..=299,429'
+            'dist/**/*.html'
           fail: true
