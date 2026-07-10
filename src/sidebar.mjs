@@ -82,6 +82,7 @@ export const sidebar = [
       "app/repository",
       "app/runner",
       "app/settings",
+      "app/shortcuts",
     ],
   },
   {
