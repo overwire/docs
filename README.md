@@ -26,4 +26,5 @@ This site bundles the Geist and Geist Mono typefaces, licensed under the SIL Ope
 
 Copyright © 2026 Overwire. All rights reserved.
 
-Overwire is compatible with GitHub Actions workflow files. Overwire is not affiliated with, endorsed by, or sponsored by GitHub, Inc. GitHub and GitHub Actions are trademarks of GitHub, Inc.
+<!-- Canonical disclaimer — must match the overwire.io footer exactly. -->
+Overwire is compatible with GitHub Actions workflow files. Overwire is not affiliated with, endorsed by, or sponsored by GitHub, Inc. "GitHub" and "GitHub Actions" are trademarks of GitHub, Inc.

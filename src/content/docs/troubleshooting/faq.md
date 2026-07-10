@@ -21,4 +21,5 @@ No. Secret values resolve from `.overwire/secrets.yml` or your environment, stay
 
 ## Is Overwire affiliated with GitHub?
 
-No. Overwire is compatible with GitHub Actions workflow files. Overwire is not affiliated with, endorsed by, or sponsored by GitHub, Inc.
+<!-- Canonical disclaimer — must match the overwire.io footer exactly. -->
+No. Overwire is compatible with GitHub Actions workflow files. Overwire is not affiliated with, endorsed by, or sponsored by GitHub, Inc. "GitHub" and "GitHub Actions" are trademarks of GitHub, Inc.
