@@ -37,7 +37,7 @@ Most commands accept `--config-root <dir>` to point at a `.overwire/` directory 
 
 ## JSON output
 
-Every introspection and execution command has structured output: `parse`, `list`, `lint`, `explain`, `status`, `history`, `chain`, `validate`, `doctor`, `doctor capabilities`, `init`, `seed-mocks`, `cache`, and `license status` accept `--json`; `simulate` and `schema` always print JSON; [`run --json`](/cli/run/) streams run events as JSON lines and ends with a single `run:result` envelope. Unhandled errors in `--json` invocations print one structured `{"error":{"kind","label","message","guidance"}}` object to stderr.
+Every introspection and execution command has structured output: `parse`, `list`, `lint`, `explain`, `status`, `history`, `history show`, `chain`, `validate`, `doctor`, `doctor capabilities`, `init`, `seed-mocks`, `resolve` (with `--contract`), `cache`, and `license status` accept `--json`; `simulate` always prints JSON, `schema <id>` prints the schema as JSON, and `schema --list --json` emits the index as JSON; [`run --json`](/cli/run/) streams run events as JSON lines and ends with a single `run:result` envelope. Unhandled errors in `--json` invocations print one structured `{"error":{"kind","label","message","guidance"}}` object to stderr.
 
 ## Exit codes
 
