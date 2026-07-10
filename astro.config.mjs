@@ -37,6 +37,22 @@ export default defineConfig({
             href: "/apple-touch-icon.png",
           },
         },
+        {
+          tag: "meta",
+          attrs: { property: "og:image", content: "https://docs.overwire.io/og.png" },
+        },
+        {
+          tag: "meta",
+          attrs: { property: "og:image:width", content: "1200" },
+        },
+        {
+          tag: "meta",
+          attrs: { property: "og:image:height", content: "630" },
+        },
+        {
+          tag: "meta",
+          attrs: { name: "twitter:card", content: "summary_large_image" },
+        },
       ],
       customCss: [
         "@fontsource/geist-sans/400.css",
