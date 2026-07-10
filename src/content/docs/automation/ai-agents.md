@@ -67,4 +67,4 @@ The [demo workspace](/getting-started/demo/) is a complete worked example with a
 
 ## What stays free
 
-The CLI is free end to end — no command or flag is license-gated. Pro covers desktop GUI surfaces only (multi-repo workspaces, watch mode toggle, run comparison, expression debugger, selective re-runs, PR views).
+The CLI is free end to end — no command or flag is license-gated. Pro covers desktop GUI surfaces only (multi-repo workspaces, governance simulation, and pull request views).

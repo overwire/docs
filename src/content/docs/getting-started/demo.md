@@ -5,7 +5,7 @@ sidebar:
   order: 5
 ---
 
-[`overwire/demo`](https://github.com/overwire/demo) ships two demo workspaces: a single-repo free demo and a four-repo multi-repo workspace for Pro features. Every supported workflow feature has a runnable example somewhere inside: reusable workflows, matrices, services containers, environment protection, rulesets, pull request scenarios, and workflow chains.
+[`overwire/demo`](https://github.com/overwire/demo) ships two demo workspaces: a single-repo free demo and a four-repo multi-repo workspace for Pro features. (Pro applies only to opening the multi-repo workspace in the desktop app — every CLI command below is free.) Every supported workflow feature has a runnable example somewhere inside: reusable workflows, matrices, services containers, environment protection, rulesets, pull request scenarios, and workflow chains.
 
 ## Get it
 
@@ -31,7 +31,7 @@ Two workflows are included:
 
 Pre-configured `.overwire/` files include variables, secrets, step modes, dispatch defaults, and event payloads.
 
-## Multi-repo demo (Pro)
+## Multi-repo demo (Pro in the desktop app)
 
 Open the `multi-repo-demo/` directory in the desktop app, or drive it from the CLI. The workspace peer registry (`.overwire/instances.yml`) ships checked in, so `overwire init --workspace` is only needed if you add repositories:
 

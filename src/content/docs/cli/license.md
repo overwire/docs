@@ -22,7 +22,7 @@ overwire license <command>
 
 ## CLI and Pro
 
-The CLI is free end to end — no command or flag checks a license. Pro covers desktop GUI surfaces only: multi-repo workspaces, watch mode toggle, run comparison, expression debugger, selective re-runs, and PR views. Since the CLI and the desktop app share one license file, activating on either covers both.
+The CLI is free end to end — no command or flag checks a license. Pro covers desktop GUI surfaces only: multi-repo workspaces, governance simulation (rulesets, organization settings, custom properties, statuses), and pull request views. Since the CLI and the desktop app share one license file, activating on either covers both.
 
 ```sh
 overwire license activate <key-from-purchase-email>
