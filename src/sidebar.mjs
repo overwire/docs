@@ -22,6 +22,7 @@ export const sidebar = [
       "concepts/mock-contracts",
       "concepts/support-tiers",
       "concepts/runs",
+      "concepts/licensing",
     ],
   },
   {
@@ -89,7 +90,7 @@ export const sidebar = [
   },
   {
     label: "Platform",
-    items: ["platform/directory-layout"],
+    items: ["platform/directory-layout", "platform/uninstall", "platform/privacy"],
   },
   {
     label: "Troubleshooting",

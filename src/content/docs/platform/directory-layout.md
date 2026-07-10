@@ -24,6 +24,7 @@ Overwire separates committable project config from local machine state. This pag
 | `~/.cache/overwire/tool-cache/` | Persisted runner tool cache, mounted as `RUNNER_TOOL_CACHE` across runs. |
 | `~/.cache/overwire/concurrency/` | Cross-process concurrency lock files. |
 | `~/Library/Application Support/Overwire/` | Desktop app state: window layout, recent projects, theme, runner image settings. |
+| `~/.config/overwire/license.json` | The Pro license state shared by the desktop app and the CLI. Deactivate before deleting — see [Uninstall & reset](/platform/uninstall/). |
 
 The Windows layout will be documented when that build ships.
 
