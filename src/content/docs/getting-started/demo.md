@@ -17,11 +17,10 @@ git clone https://github.com/overwire/demo.git
 
 ## Single-repo demo (free)
 
-Open the `single-repo-demo/` directory in the desktop app, or initialize from the CLI:
+Open the `single-repo-demo/` directory in the desktop app, or run straight from the CLI — the `.overwire/` config ships fully populated, so there is nothing to initialize:
 
 ```sh
 cd single-repo-demo
-overwire init
 overwire run .github/workflows/ci.yml --config-root .overwire --event push
 ```
 
@@ -34,11 +33,10 @@ Pre-configured `.overwire/` files include variables, secrets, step modes, dispat
 
 ## Multi-repo demo (Pro)
 
-Open the `multi-repo-demo/` directory in the desktop app, or initialize from the CLI:
+Open the `multi-repo-demo/` directory in the desktop app, or drive it from the CLI. The workspace peer registry (`.overwire/instances.yml`) ships checked in, so `overwire init --workspace` is only needed if you add repositories:
 
 ```sh
 cd multi-repo-demo
-overwire init --workspace
 ```
 
 Four repositories under two fictional organizations, `acme-corp` and `wire-corp`:
@@ -82,8 +80,8 @@ overwire chain compliance-app/.overwire/chains/pr-lifecycle.yml \
 overwire lint compliance-app/.github/workflows/bad-practices.yml
 ```
 
-The multi-repo demo's [CLI-TEST-COMMANDS.md](https://github.com/overwire/demo/blob/main/multi-repo-demo/CLI-TEST-COMMANDS.md) is a command-by-command tour of the whole workspace.
+The multi-repo demo's [CLI-TEST-COMMANDS.md](https://github.com/overwire/demo/blob/main/multi-repo-demo/CLI-TEST-COMMANDS.md) is a command-by-command tour of the whole workspace; `./tour.sh` in the same directory runs the full recommended order as an asserted, mock-only smoke test.
 
 ## Mock by default
 
-Most workflows in the demo default to mock mode, so everything runs without a container engine or network access. Live execution needs a Docker-API-compatible container engine (e.g., Docker Desktop, Colima, OrbStack, Rancher Desktop), and the first live `npm ci` needs registry access. Flip individual steps to live from the editor mode chips; see [step modes](/concepts/modes/) for how mode selection works.
+Every workflow in both demos defaults to mock mode, so everything runs without a container engine or network access. Live execution needs a Docker-API-compatible container engine (e.g., Docker Desktop, Colima, OrbStack, Rancher Desktop), and the first live `npm ci` needs registry access. Flip individual steps to live from the editor mode chips; see [step modes](/concepts/modes/) for how mode selection works.
