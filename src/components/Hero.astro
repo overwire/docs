@@ -1,0 +1,239 @@
+---
+/* Overrides Starlight's default Hero (registered via `components` in
+   astro.config.mjs) to render the landing title as an animated ASCII
+   wordmark (src/scripts/ascii-text.ts). The plain <h1> stays in the DOM
+   for SEO and screen readers, and remains visible whenever the effect
+   cannot run (no JS, no WebGL, prefers-reduced-motion). Markup and styles
+   otherwise mirror Starlight 0.40's Hero.astro. */
+import { Image } from 'astro:assets';
+import { LinkButton } from '@astrojs/starlight/components';
+
+const { data } = Astro.locals.starlightRoute.entry;
+const { title = data.title, tagline, image, actions = [] } = data.hero || {};
+
+const imageAttrs = {
+  loading: 'eager' as const,
+  decoding: 'async' as const,
+  width: 400,
+  height: 400,
+  alt: image?.alt || '',
+};
+
+let darkImage: ImageMetadata | undefined;
+let lightImage: ImageMetadata | undefined;
+let rawHtml: string | undefined;
+if (image) {
+  if ('file' in image) {
+    darkImage = image.file;
+  } else if ('dark' in image) {
+    darkImage = image.dark;
+    lightImage = image.light;
+  } else {
+    rawHtml = image.html;
+  }
+}
+
+/* Lowercase to match the site wordmark ("overwire"). */
+const asciiText = String(title).toLowerCase();
+---
+
+<div class="hero">
+  {
+    darkImage && (
+      <Image
+        src={darkImage}
+        {...imageAttrs}
+        class:list={{ 'light:sl-hidden': Boolean(lightImage) }}
+      />
+    )
+  }
+  {lightImage && <Image src={lightImage} {...imageAttrs} class="dark:sl-hidden" />}
+  {rawHtml && <div class="hero-html sl-flex" set:html={rawHtml} />}
+  <div class="sl-flex stack">
+    <div class="sl-flex copy">
+      <div class="ascii-title-frame">
+        {/* id must stay "_top": Starlight's skip link targets PAGE_TITLE_ID. */}
+        <h1 id="_top" data-page-title set:html={title} />
+        <div class="ascii-title" data-text={asciiText} aria-hidden="true"></div>
+      </div>
+      {tagline && <div class="tagline" set:html={tagline} />}
+    </div>
+    {
+      actions.length > 0 && (
+        <div class="sl-flex actions">
+          {actions.map(
+            ({ attrs: { class: className, ...attrs } = {}, icon, link: href, text, variant }) => (
+              <LinkButton {href} {variant} icon={icon?.name} class:list={[className]} {...attrs}>
+                {text}
+                {icon?.html && <Fragment set:html={icon.html} />}
+              </LinkButton>
+            )
+          )}
+        </div>
+      )
+    }
+  </div>
+</div>
+
+<script>
+  import { createAsciiText } from '../scripts/ascii-text';
+
+  const frame = document.querySelector<HTMLElement>('.ascii-title-frame');
+  const mount = frame?.querySelector<HTMLElement>('.ascii-title');
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const probe = document.createElement('canvas');
+  const hasWebgl = Boolean(probe.getContext('webgl2') ?? probe.getContext('webgl'));
+
+  if (frame && mount && !reducedMotion && hasWebgl) {
+    // Same breakpoint as the hero styles: wide layouts left-align the copy.
+    const wideLayout = window.matchMedia('(min-width: 50rem)');
+
+    const mountEffect = () => {
+      // Smaller cells on short (mobile) frames so enough rows span the word.
+      const smallFrame = mount.getBoundingClientRect().height <= 100;
+      return createAsciiText(mount, {
+        text: mount.dataset.text || 'overwire',
+        enableWaves: false,
+        asciiFontSize: smallFrame ? 5 : 7,
+        planeBaseHeight: 'fit',
+        alignX: wideLayout.matches ? 'start' : 'center',
+        onMounted: () => {
+          frame.dataset.asciiMounted = '';
+        },
+      });
+    };
+
+    let cleanup = mountEffect();
+    // Alignment and cell size are fixed at mount; redo both when the layout
+    // crosses the breakpoint.
+    wideLayout.addEventListener('change', () => {
+      cleanup();
+      cleanup = mountEffect();
+    });
+  }
+</script>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .hero > img,
+  .hero > .hero-html {
+    object-fit: contain;
+    width: min(70%, 20rem);
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .stack {
+    flex-direction: column;
+    gap: clamp(1.5rem, calc(1.5rem + 1vw), 2rem);
+    text-align: center;
+  }
+
+  .copy {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .copy > * {
+    max-width: 50ch;
+  }
+
+  .ascii-title-frame {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: clamp(5.5rem, 15vw, 8.5rem);
+    overflow: hidden;
+  }
+
+  h1 {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: clamp(var(--sl-text-3xl), calc(0.25rem + 5vw), var(--sl-text-6xl));
+    line-height: var(--sl-line-height-headings);
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  /* Once the animation is running, keep the h1 for assistive tech only. */
+  .ascii-title-frame[data-ascii-mounted] h1 {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .ascii-title {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Upstream shows its low-res sampling canvas as a rainbow backdrop;
+     here the ASCII <pre> carries the whole visual. */
+  .ascii-title :global(canvas) {
+    display: none;
+  }
+
+  .ascii-title :global(pre) {
+    color: var(--sl-color-white);
+    user-select: none;
+  }
+
+  .tagline {
+    font-size: clamp(var(--sl-text-base), calc(0.0625rem + 2vw), var(--sl-text-xl));
+    color: var(--sl-color-gray-2);
+  }
+
+  .actions {
+    gap: 1rem 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (min-width: 50rem) {
+    .hero {
+      grid-template-columns: 7fr 4fr;
+      gap: 3%;
+      padding-block: clamp(2.5rem, calc(1rem + 10vmin), 10rem);
+    }
+
+    .hero > img,
+    .hero > .hero-html {
+      order: 2;
+      width: min(100%, 25rem);
+    }
+
+    .stack {
+      text-align: start;
+    }
+
+    .copy {
+      align-items: flex-start;
+    }
+
+    h1 {
+      justify-content: flex-start;
+    }
+
+    .actions {
+      justify-content: flex-start;
+    }
+  }
+</style>
