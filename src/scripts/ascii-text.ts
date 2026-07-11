@@ -6,6 +6,8 @@
 //  - Rainbow gradient / mix-blend-mode / mouse hue-rotate removed; character
 //    color and the low-res sampling <canvas> backdrop are styled by the
 //    caller's CSS instead (theme-aware, "blue is the only accent").
+//  - Mouse/touch tilt removed: the wordmark stays put; the only motion is
+//    the time-driven shader wobble.
 
 import * as THREE from 'three';
 
@@ -55,10 +57,6 @@ void main() {
     gl_FragColor = vec4(r, g, b, a);
 }
 `;
-
-function map(n: number, start: number, stop: number, start2: number, stop2: number) {
-  return ((n - start) / (stop - start)) * (stop2 - start2) + start2;
-}
 
 interface AsciiFilterOptions {
   fontSize?: number;
@@ -259,8 +257,7 @@ interface CanvAsciiOptions {
 // Visible world height at z=0 for the fixed camera (fov 45°, z=30).
 const VISIBLE_HEIGHT = 2 * 30 * Math.tan((45 * Math.PI) / 360);
 
-// 'fit' targets 85% of the container width (headroom for the hover tilt),
-// capped at 60% of its height.
+// 'fit' targets 85% of the container width, capped at 60% of its height.
 function fitBaseHeight(containerAspect: number, textAspect: number) {
   return Math.min(0.6 * VISIBLE_HEIGHT, (0.85 * VISIBLE_HEIGHT * containerAspect) / textAspect);
 }
@@ -280,7 +277,6 @@ class CanvAscii {
   enableWaves: boolean;
   camera: THREE.PerspectiveCamera;
   scene: THREE.Scene;
-  mouse: { x: number; y: number };
   textCanvas!: CanvasTxt;
   texture!: THREE.CanvasTexture;
   geometry: THREE.PlaneGeometry | undefined;
@@ -311,9 +307,6 @@ class CanvAscii {
     this.camera.position.z = 30;
 
     this.scene = new THREE.Scene();
-    this.mouse = { x: this.width / 2, y: this.height / 2 };
-
-    this.onMouseMove = this.onMouseMove.bind(this);
   }
 
   async init() {
@@ -380,9 +373,6 @@ class CanvAscii {
 
     this.container.appendChild(this.filter.domElement);
     this.setSize(this.width, this.height);
-
-    this.container.addEventListener('mousemove', this.onMouseMove);
-    this.container.addEventListener('touchmove', this.onMouseMove);
   }
 
   setSize(w: number, h: number) {
@@ -412,14 +402,6 @@ class CanvAscii {
     this.animate();
   }
 
-  onMouseMove(evt: MouseEvent | TouchEvent) {
-    const e = (evt as TouchEvent).touches ? (evt as TouchEvent).touches[0] : (evt as MouseEvent);
-    const bounds = this.container.getBoundingClientRect();
-    const x = e.clientX - bounds.left;
-    const y = e.clientY - bounds.top;
-    this.mouse = { x, y };
-  }
-
   animate() {
     const animateFrame = () => {
       this.animationFrameId = requestAnimationFrame(animateFrame);
@@ -436,17 +418,7 @@ class CanvAscii {
 
     (this.mesh.material as THREE.ShaderMaterial).uniforms.uTime.value = Math.sin(time);
 
-    this.updateRotation();
     this.filter.render(this.scene, this.camera);
-  }
-
-  updateRotation() {
-    // Clamp: pointer events can land far outside the container (map() extrapolates).
-    const x = Math.max(-0.5, Math.min(0.5, map(this.mouse.y, 0, this.height, 0.5, -0.5)));
-    const y = Math.max(-0.5, Math.min(0.5, map(this.mouse.x, 0, this.width, -0.5, 0.5)));
-
-    this.mesh.rotation.x += (x - this.mesh.rotation.x) * 0.05;
-    this.mesh.rotation.y += (y - this.mesh.rotation.y) * 0.05;
   }
 
   clear() {
@@ -475,8 +447,6 @@ class CanvAscii {
         this.container.removeChild(this.filter.domElement);
       }
     }
-    this.container.removeEventListener('mousemove', this.onMouseMove);
-    this.container.removeEventListener('touchmove', this.onMouseMove);
     this.clear();
     if (this.renderer) {
       this.renderer.dispose();
