@@ -45,6 +45,10 @@ Deactivate on the old machine (Settings → License, or `overwire license deacti
 
 Yes. Overwire ships a signed installer for 64-bit Windows — [download it from overwire.io](https://overwire.io/#download). For live runs, the container engine runs on WSL 2 (e.g., Docker Desktop with its WSL 2 backend).
 
+### How do I report a bug or request a feature?
+
+File it at [github.com/overwire/feedback](https://github.com/overwire/feedback) — attaching a diagnostic bundle (app: Settings → Data, or Help → Export Diagnostic Bundle; CLI: `overwire doctor --bundle`) answers most environment questions in one shot. The bundle is redacted: names and sizes only, no file contents, no secrets. License, billing, or refund questions go to [contact@overwire.io](mailto:contact@overwire.io) instead.
+
 ## Is Overwire affiliated with GitHub?
 
 <!-- Canonical disclaimer — must match the overwire.io footer exactly. -->

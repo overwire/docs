@@ -89,7 +89,11 @@ A deliberate policy refusal, not a malfunction — for example, editing the buil
 
 ## Unexpected error
 
-Anything Overwire can't classify is reported as its own bug. Export a diagnostic bundle and send it to [contact@overwire.io](mailto:contact@overwire.io) (or file it wherever you talk to us).
+Anything Overwire can't classify is reported as its own bug. Export a diagnostic bundle and [file an issue](https://github.com/overwire/feedback/issues/new/choose) with it attached.
+
+## Reporting bugs and requesting features
+
+Bug reports and feature requests live at [github.com/overwire/feedback](https://github.com/overwire/feedback) — the app's Help menu links there too. License, billing, and refund questions go to [contact@overwire.io](mailto:contact@overwire.io) instead (never post license keys in an issue).
 
 ## Diagnostic bundles
 
@@ -99,4 +103,4 @@ When reporting an issue, attach a diagnostic bundle:
 overwire doctor --bundle
 ```
 
-The bundle is redacted by design: it contains a names-and-sizes inventory of your config tree, environment facts, and failed-step run summaries. Secret values and file contents are never included, and home directory paths are scrubbed. The desktop app exports the same bundle from Settings.
+The bundle is redacted by design: it contains a names-and-sizes inventory of your config tree, environment facts, and failed-step run summaries. Secret values and file contents are never included, and home directory paths are scrubbed. The desktop app exports the same bundle from Settings → Data or Help → Export Diagnostic Bundle.
