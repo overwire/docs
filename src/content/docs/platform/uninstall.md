@@ -47,4 +47,31 @@ Per project, delete `.overwire/state/` and `.overwire/cache/` (both git-ignored)
 
 ## Windows
 
-Documented when the Windows build ships.
+1. **Deactivate your license** (Pro only) so the machine stops using an activation slot:
+
+   ```powershell
+   overwire license deactivate
+   ```
+
+   Or Settings → License → Deactivate in the app. Skipping this wastes a slot until you deactivate from another device.
+
+2. **Uninstall the app:** Settings → Apps → Installed apps → Overwire → Uninstall (asks for administrator approval). This removes `C:\Program Files\Overwire` and the shortcuts.
+
+3. **Remove machine state** (all rebuildable or now-unused), in PowerShell:
+
+   ```powershell
+   Remove-Item -Recurse -Force "$env:USERPROFILE\.cache\overwire"   # run store, action/tool caches, lock files
+   Remove-Item -Recurse -Force "$env:APPDATA\Overwire"              # app state and license.json (deactivate first!)
+   ```
+
+   App state and the license file share one folder on Windows — see [Directory layout](/platform/directory-layout/).
+
+4. **Remove the CLI**, if you installed it:
+
+   ```powershell
+   npm uninstall -g overwire
+   ```
+
+5. **Project config** (`.overwire/` in your repositories) is yours — committable scenario files, not app state. Delete per repo if you no longer want it; `.overwire/state/` and `.overwire/cache/` are the only run-written parts.
+
+The pulled `overwireio/runner` image stays in your container engine — remove it there (`docker rmi overwireio/runner`) if you want the space back.

@@ -26,11 +26,23 @@ Overwire separates committable project config from local machine state. This pag
 | `~/Library/Application Support/Overwire/` | Desktop app state: window layout, recent projects, theme, runner image settings. |
 | `~/.config/overwire/license.json` | The Pro license state shared by the desktop app and the CLI. Deactivate before deleting — see [Uninstall & reset](/platform/uninstall/). |
 
-The Windows layout will be documented when that build ships.
+## On your machine (Windows)
+
+| Path | What it is |
+| --- | --- |
+| `%USERPROFILE%\.cache\overwire\runs\<owner>\<repo>\<run-id>\` | The run store. Every run persists a self-contained record here. |
+| `%USERPROFILE%\.cache\overwire\actions\` | Cached action sources fetched for live runs. |
+| `%USERPROFILE%\.cache\overwire\tool-cache\` | Persisted runner tool cache, mounted as `RUNNER_TOOL_CACHE` across runs. |
+| `%USERPROFILE%\.cache\overwire\concurrency\` | Cross-process concurrency lock files. |
+| `C:\Program Files\Overwire\` | The installed app itself, managed by its installer and uninstaller. |
+| `%APPDATA%\Overwire\` | Desktop app state: window layout, recent projects, theme, runner image settings. |
+| `%APPDATA%\overwire\license.json` | The Pro license state shared by the desktop app and the CLI. Deactivate before deleting — see [Uninstall & reset](/platform/uninstall/). |
+
+Windows folder names are case-insensitive, so `%APPDATA%\Overwire` (app state) and `%APPDATA%\overwire` (license) are the same folder: app state and the license file live together.
 
 ## What is safe to delete
 
-Everything under `~/.cache/overwire/` is rebuildable: deleting it loses run history and forces action re-fetching and tool re-installation, but breaks nothing. `overwire cache` inspects and clears the action and tool caches without manual deletion.
+Everything under `~/.cache/overwire/` (macOS) or `%USERPROFILE%\.cache\overwire\` (Windows) is rebuildable: deleting it loses run history and forces action re-fetching and tool re-installation, but breaks nothing. `overwire cache` inspects and clears the action and tool caches without manual deletion.
 
 ## Containers
 

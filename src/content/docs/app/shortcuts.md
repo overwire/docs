@@ -3,7 +3,7 @@ title: Keyboard shortcuts
 description: Every keyboard shortcut in the Overwire desktop app.
 ---
 
-Shortcuts are suppressed while focus is in a text field, so typing never triggers them. On Windows (when that build ships) every ⌘ below is Ctrl — the bindings already accept either.
+Shortcuts are suppressed while focus is in a text field, so typing never triggers them. On Windows every ⌘ below is Ctrl — the bindings already accept either.
 
 ## Navigation
 

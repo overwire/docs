@@ -11,7 +11,11 @@ Download the DMG for your architecture (Apple silicon or Intel) from [overwire.i
 
 ## Windows
 
-Coming next: an x64 installer of the same app. [overwire.io](https://overwire.io/#download) has current availability.
+Download the installer for 64-bit Windows from [overwire.io](https://overwire.io/#download) and run it. The installer is signed, installs machine-wide to `C:\Program Files\Overwire`, and Windows asks for administrator approval during installation and when applying app updates.
+
+While a new release builds download reputation, Microsoft SmartScreen may interpose "Windows protected your PC" on first run. Select **More info**, check the named publisher, and choose **Run anyway**.
+
+For live runs on Windows, the container engine runs on WSL 2 (e.g., Docker Desktop with its WSL 2 backend) — see Live execution below.
 
 ## CLI (any platform with Node.js)
 

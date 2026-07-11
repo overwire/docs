@@ -41,9 +41,9 @@ Deactivate on the old machine (Settings → License, or `overwire license deacti
 
 14 days, no questions, on your first purchase; renewal charges may be refunded at our discretion within 14 days of the charge. The [terms](https://overwire.io/terms) are authoritative.
 
-### When is the Windows version coming?
+### Is there a Windows version?
 
-It's next — x64 first. Watch [overwire.io](https://overwire.io/#download) for availability; no dates promised.
+Yes. Overwire ships a signed installer for 64-bit Windows — [download it from overwire.io](https://overwire.io/#download). For live runs, the container engine runs on WSL 2 (e.g., Docker Desktop with its WSL 2 backend).
 
 ## Is Overwire affiliated with GitHub?
 
